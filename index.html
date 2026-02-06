@@ -484,6 +484,52 @@
             margin-bottom: 1.5rem;
         }
 
+        /* Galería */
+        .galeria {
+            padding: 100px 5%;
+            background: var(--black);
+        }
+
+        .galeria-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .galeria-item {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .galeria-item:hover {
+            transform: scale(1.03);
+        }
+
+        .galeria-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 1024px) {
+            .galeria-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .galeria-grid {
+                grid-template-columns: 1fr;
+            }
+            .galeria-item img {
+                height: 350px;
+            }
+        }
+
         /* Testimonios */
         .testimonios {
             padding: 100px 5%;
@@ -1072,6 +1118,28 @@
                     <p>Seguros de vida, planes de ahorro, protección familiar y bienestar para tu retiro en Colombia.</p>
                     <a href="#contacto" class="btn-primary">Infórmate Hoy</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Promocional -->
+    <section class="galeria" id="galeria">
+        <div class="section-header">
+            <h2>Protegemos a <span>Quienes Trabajan Duro</span></h2>
+            <p>Desde el campo hasta la oficina, cada trabajador migrante merece un retiro digno</p>
+        </div>
+        <div class="galeria-grid">
+            <div class="galeria-item">
+                <img src="img/promo-familia.jpg" alt="Jubílate en México">
+            </div>
+            <div class="galeria-item">
+                <img src="img/promo-ejecutiva.jpg" alt="Modalidad 40">
+            </div>
+            <div class="galeria-item">
+                <img src="img/promo-trabajadora.jpg" alt="Tu futuro en México">
+            </div>
+            <div class="galeria-item">
+                <img src="img/promo-campo.jpg" alt="Trabajadores del campo">
             </div>
         </div>
     </section>
