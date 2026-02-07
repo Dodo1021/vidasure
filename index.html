@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIDASURE by García Villarreal | Seguros para Migrantes</title>
-    <meta name="description" content="Asegura tu futuro y el de tu familia. Especialistas en Modalidad 40 IMSS, seguros de vida y ahorro para el retiro para mexicanos y colombianos en Estados Unidos.">
+    <title>VIDASURE by García Villarreal | Seguros de Vida y Auto</title>
+    <meta name="description" content="Tu tranquilidad, nuestra prioridad. Seguros personalizados de vida y auto que te dan seguridad y tranquilidad en todo momento.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
             --gold: #C9A227;
-            --gold-light: #E8D48A;
-            --gold-dark: #8B7117;
-            --black: #0A0A0A;
-            --dark-gray: #1A1A1A;
+            --gold-light: #D4B84A;
+            --gold-dark: #A68A1F;
+            --navy: #1B2A4A;
+            --navy-dark: #131F36;
+            --cream: #F8F5F0;
+            --cream-dark: #EDE8E0;
             --white: #FFFFFF;
-            --cream: #F5F0E6;
+            --text-dark: #2D2D2D;
+            --text-gray: #6B7280;
         }
 
         * {
@@ -32,65 +35,76 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--black);
-            color: var(--white);
+            background: var(--cream);
+            color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* Navigation */
+        /* ========== NAVIGATION ========== */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
+            background: var(--white);
             z-index: 1000;
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
-        .logo img {
-            height: 50px;
-            border-radius: 8px;
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon i {
+            color: var(--white);
+            font-size: 1.2rem;
         }
 
         .logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--gold);
+            font-size: 1.4rem;
             font-weight: 600;
+            color: var(--navy);
         }
 
         .logo-text span {
             display: block;
-            font-size: 0.7rem;
-            color: var(--gold-light);
+            font-size: 0.65rem;
+            color: var(--gold);
             font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            letter-spacing: 2px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
-            color: var(--white);
+            color: var(--text-dark);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
             font-size: 0.95rem;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
@@ -99,17 +113,17 @@
 
         .nav-cta {
             background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            color: var(--black);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
+            color: var(--white) !important;
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
             font-weight: 600;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .nav-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
+            box-shadow: 0 8px 25px rgba(201, 162, 39, 0.35);
+            color: var(--white) !important;
         }
 
         .menu-toggle {
@@ -122,630 +136,395 @@
         .menu-toggle span {
             width: 25px;
             height: 2px;
-            background: var(--gold);
+            background: var(--navy);
         }
 
-        /* Hero Section */
+        /* ========== HERO SECTION ========== */
         .hero {
             min-height: 100vh;
+            background: var(--cream);
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
             padding: 120px 5% 80px;
-            background: linear-gradient(180deg, var(--black) 0%, var(--dark-gray) 100%);
             position: relative;
             overflow: hidden;
         }
 
+        /* Decorative curves */
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
+            top: -50%;
+            right: -20%;
+            width: 70%;
+            height: 150%;
+            background: radial-gradient(ellipse, rgba(201, 162, 39, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at center, rgba(201, 162, 39, 0.1) 0%, transparent 70%);
+            height: 200px;
+            background: linear-gradient(180deg, transparent, rgba(237, 232, 224, 0.5));
         }
 
-        .hero-content {
-            max-width: 900px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(201, 162, 39, 0.15);
-            border: 1px solid var(--gold);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--gold);
-            margin-bottom: 2rem;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-        }
-
-        .hero-flags {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero-flags img {
-            width: 50px;
-            height: 35px;
-            object-fit: cover;
-            border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            color: var(--black);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(201, 162, 39, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-        }
-
-        .btn-secondary:hover {
-            background: var(--gold);
-            color: var(--black);
-        }
-
-        /* Stats Section */
-        .stats {
-            background: var(--dark-gray);
-            padding: 4rem 5%;
-            border-top: 1px solid rgba(201, 162, 39, 0.2);
-            border-bottom: 1px solid rgba(201, 162, 39, 0.2);
-        }
-
-        .stats-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-        }
-
-        /* Servicios Section */
-        .servicios {
-            padding: 100px 5%;
-            background: var(--black);
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem;
-        }
-
-        .section-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1rem;
-        }
-
-        .section-header h2 span {
-            color: var(--gold);
-        }
-
-        .section-header p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.1rem;
-        }
-
-        .servicios-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .servicio-card {
-            background: linear-gradient(145deg, var(--dark-gray), rgba(26, 26, 26, 0.5));
-            border: 1px solid rgba(201, 162, 39, 0.2);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.3s;
-        }
-
-        .servicio-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold);
-            box-shadow: 0 20px 50px rgba(201, 162, 39, 0.15);
-        }
-
-        .servicio-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: var(--black);
-            margin-bottom: 1.5rem;
-        }
-
-        .servicio-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .servicio-card p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .servicio-card a {
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .servicio-card a:hover {
-            gap: 0.75rem;
-        }
-
-        /* Modalidad 40 Section */
-        .modalidad40 {
-            padding: 100px 5%;
-            background: linear-gradient(180deg, var(--dark-gray) 0%, var(--black) 100%);
-        }
-
-        .modalidad-content {
-            max-width: 1200px;
+        .hero-container {
+            max-width: 1300px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
-        .modalidad-text h2 {
+        .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--navy);
+            line-height: 1.2;
             margin-bottom: 1.5rem;
         }
 
-        .modalidad-text h2 span {
-            color: var(--gold);
-        }
-
-        .modalidad-text p {
-            color: rgba(255, 255, 255, 0.8);
+        .hero-content p {
             font-size: 1.1rem;
+            color: var(--text-gray);
             margin-bottom: 2rem;
+            max-width: 450px;
             line-height: 1.8;
         }
 
-        .modalidad-benefits {
-            list-style: none;
-            margin-bottom: 2rem;
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
         }
 
-        .modalidad-benefits li {
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(201, 162, 39, 0.4);
+        }
+
+        .hero-image {
+            position: relative;
             display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            color: rgba(255, 255, 255, 0.9);
+            justify-content: center;
+            align-items: center;
         }
 
-        .modalidad-benefits li i {
-            color: var(--gold);
-            font-size: 1.2rem;
-            margin-top: 0.2rem;
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
         }
 
-        .modalidad-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+        .hero-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
         }
 
-        .modalidad-images img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        .hero-badge i {
+            color: var(--white);
+            font-size: 1.8rem;
         }
 
-        .modalidad-images img:first-child {
-            grid-column: span 2;
+        /* ========== FEATURES SECTION ========== */
+        .features {
+            padding: 80px 5%;
+            background: var(--white);
         }
 
-        /* Países Section */
-        .paises {
-            padding: 100px 5%;
-            background: var(--black);
-        }
-
-        .paises-grid {
-            max-width: 1200px;
+        .features-grid {
+            max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 3rem;
         }
 
-        .pais-card {
-            border-radius: 25px;
-            overflow: hidden;
-            position: relative;
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
         }
 
-        .pais-card img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
-
-        .pais-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.9));
-            padding: 3rem 2rem 2rem;
-        }
-
-        .pais-flags {
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(201, 162, 39, 0.1);
+            border-radius: 50%;
             display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
         }
 
-        .pais-flags img {
-            width: 35px;
-            height: 24px;
-            object-fit: cover;
-            border-radius: 3px;
+        .feature-icon i {
+            color: var(--gold);
+            font-size: 1.6rem;
         }
 
-        .pais-overlay h3 {
+        .feature-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.25rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ========== SEGUROS SECTION ========== */
+        .seguros {
+            padding: 80px 5%;
+            background: var(--cream);
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--navy);
+            margin-bottom: 3rem;
+        }
+
+        .seguros-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .seguro-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .seguro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        .seguro-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(201, 162, 39, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .seguro-icon i {
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .seguro-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--navy);
             margin-bottom: 0.5rem;
         }
 
-        .pais-overlay p {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1.5rem;
+        .seguro-content p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
         }
 
-        /* Galería */
-        .galeria {
-            padding: 100px 5%;
-            background: var(--black);
+        .seguro-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
         }
 
-        .galeria-grid {
+        .seguro-link:hover {
+            gap: 0.75rem;
+        }
+
+        /* ========== CAROUSEL SECTION ========== */
+        .carousel-section {
+            padding: 80px 5%;
+            background: var(--white);
+        }
+
+        .carousel-container {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
         }
 
-        .galeria-item {
-            border-radius: 20px;
+        .carousel-item {
+            border-radius: 15px;
             overflow: hidden;
-            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
 
-        .galeria-item:hover {
+        .carousel-item:hover {
             transform: scale(1.03);
         }
 
-        .galeria-item img {
+        .carousel-item img {
             width: 100%;
-            height: 400px;
+            height: 280px;
             object-fit: cover;
         }
 
-        @media (max-width: 1024px) {
-            .galeria-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .galeria-grid {
-                grid-template-columns: 1fr;
-            }
-            .galeria-item img {
-                height: 350px;
-            }
-        }
-
-        /* Testimonios */
-        .testimonios {
-            padding: 100px 5%;
-            background: var(--dark-gray);
-        }
-
-        .testimonios-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .testimonio-card {
-            background: var(--black);
-            border: 1px solid rgba(201, 162, 39, 0.2);
-            border-radius: 20px;
-            padding: 2rem;
-        }
-
-        .testimonio-stars {
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .testimonio-card p {
-            color: rgba(255, 255, 255, 0.8);
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .testimonio-author {
+        .carousel-controls {
             display: flex;
-            align-items: center;
+            justify-content: center;
             gap: 1rem;
+            margin-top: 2rem;
         }
 
-        .testimonio-author img {
+        .carousel-btn {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .testimonio-author h4 {
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .testimonio-author span {
+            background: var(--white);
+            border: 2px solid var(--gold);
             color: var(--gold);
-            font-size: 0.85rem;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 5%;
-            background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-dark) 100%);
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--black);
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            color: rgba(0, 0, 0, 0.7);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .cta-section .btn-dark {
-            background: var(--black);
-            color: var(--gold);
-            padding: 1.25rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            display: inline-flex;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
             align-items: center;
-            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--cream-dark);
+            cursor: pointer;
             transition: all 0.3s;
         }
 
-        .cta-section .btn-dark:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        .carousel-dot.active {
+            background: var(--gold);
+            width: 30px;
+            border-radius: 5px;
         }
 
-        /* Contacto Section */
-        .contacto {
-            padding: 100px 5%;
-            background: var(--black);
+        /* ========== BENEFITS SECTION (DARK) ========== */
+        .benefits {
+            padding: 80px 5%;
+            background: var(--navy);
         }
 
-        .contacto-grid {
-            max-width: 1200px;
+        .benefits-grid {
+            max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
         }
 
-        .contacto-info h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contacto-info h2 span {
-            color: var(--gold);
-        }
-
-        .contacto-info > p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .contacto-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contacto-item i {
-            width: 50px;
-            height: 50px;
-            background: rgba(201, 162, 39, 0.1);
-            border: 1px solid var(--gold);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 1.2rem;
-        }
-
-        .contacto-item div h4 {
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .contacto-item div p {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .contacto-form {
-            background: var(--dark-gray);
-            border: 1px solid rgba(201, 162, 39, 0.2);
-            border-radius: 25px;
-            padding: 3rem;
-        }
-
-        .contacto-form h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
+        .benefit-card {
             text-align: center;
+            padding: 2rem;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: var(--black);
-            border: 1px solid rgba(201, 162, 39, 0.3);
-            border-radius: 10px;
-            color: var(--white);
-            font-size: 1rem;
-            font-family: inherit;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .contacto-form .btn-primary {
-            width: 100%;
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(201, 162, 39, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            padding: 1.25rem;
+            margin: 0 auto 1.5rem;
         }
 
-        /* Footer */
+        .benefit-icon i {
+            color: var(--gold);
+            font-size: 1.6rem;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ========== FOOTER ========== */
         footer {
-            background: var(--dark-gray);
+            background: var(--navy-dark);
             padding: 60px 5% 30px;
-            border-top: 1px solid rgba(201, 162, 39, 0.2);
         }
 
         .footer-content {
@@ -757,16 +536,19 @@
             margin-bottom: 3rem;
         }
 
-        .footer-brand img {
-            height: 60px;
-            border-radius: 10px;
+        .footer-brand .logo {
             margin-bottom: 1rem;
         }
 
-        .footer-brand p {
+        .footer-brand .logo-text {
+            color: var(--white);
+        }
+
+        .footer-brand > p {
             color: rgba(255, 255, 255, 0.6);
             margin-bottom: 1.5rem;
             line-height: 1.7;
+            font-size: 0.95rem;
         }
 
         .footer-social {
@@ -777,25 +559,24 @@
         .footer-social a {
             width: 40px;
             height: 40px;
-            background: rgba(201, 162, 39, 0.1);
-            border: 1px solid var(--gold);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gold);
+            color: var(--white);
             transition: all 0.3s;
         }
 
         .footer-social a:hover {
             background: var(--gold);
-            color: var(--black);
         }
 
         .footer-links h4 {
-            color: var(--gold);
+            color: var(--white);
             margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            font-weight: 600;
         }
 
         .footer-links ul {
@@ -809,6 +590,7 @@
         .footer-links a {
             color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
+            font-size: 0.95rem;
             transition: color 0.3s;
         }
 
@@ -825,10 +607,27 @@
             justify-content: space-between;
             align-items: center;
             color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
-        /* WhatsApp Float */
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--gold);
+        }
+
+        /* ========== WHATSAPP FLOAT ========== */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -841,7 +640,7 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 2rem;
+            font-size: 1.8rem;
             box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
             z-index: 999;
             transition: all 0.3s;
@@ -853,14 +652,30 @@
             box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
         }
 
-        /* Responsive */
+        /* ========== RESPONSIVE ========== */
         @media (max-width: 1024px) {
-            .servicios-grid {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content p {
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .features-grid,
+            .benefits-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .testimonios-grid {
-                grid-template-columns: 1fr 1fr;
+            .carousel-slide {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .footer-content {
@@ -877,32 +692,21 @@
                 display: flex;
             }
 
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .servicios-grid {
+            .features-grid,
+            .benefits-grid {
                 grid-template-columns: 1fr;
             }
 
-            .modalidad-content {
+            .seguros-grid {
                 grid-template-columns: 1fr;
             }
 
-            .modalidad-images {
-                order: -1;
+            .carousel-slide {
+                grid-template-columns: 1fr 1fr;
             }
 
-            .paises-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonios-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contacto-grid {
-                grid-template-columns: 1fr;
+            .carousel-item img {
+                height: 200px;
             }
 
             .footer-content {
@@ -916,8 +720,22 @@
 
             .footer-bottom {
                 flex-direction: column;
-                gap: 1rem;
                 text-align: center;
+            }
+
+            .footer-bottom-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-slide {
+                grid-template-columns: 1fr;
+            }
+
+            .carousel-item img {
+                height: 250px;
             }
         }
     </style>
@@ -926,20 +744,20 @@
     <!-- Navigation -->
     <nav>
         <div class="logo">
-            <img src="img/logo.jpg" alt="VIDASURE Logo">
+            <div class="logo-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
             <div class="logo-text">
                 VIDASURE
                 <span>by García Villarreal</span>
             </div>
         </div>
         <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#modalidad40">Modalidad 40</a></li>
-            <li><a href="#paises">Cobertura</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#seguros">Seguro de Auto</a></li>
+            <li><a href="#seguros">Seguro de Vida</a></li>
+            <li><a href="#contacto">Buscar póliza</a></li>
+            <li><a href="https://wa.me/528117900032" class="nav-cta">Cotiza ahora</a></li>
         </ul>
-        <a href="#contacto" class="nav-cta">Cotiza Ahora</a>
         <div class="menu-toggle">
             <span></span>
             <span></span>
@@ -949,389 +767,205 @@
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="hero-content">
-            <span class="hero-badge">🇺🇸 Para Migrantes en Estados Unidos</span>
-            <h1>Asegura tu <span>Futuro</span> y el de <span>Tu Familia</span></h1>
-            <p>Especialistas en seguros, ahorro para el retiro y Modalidad 40 IMSS. Trabaja en Estados Unidos, retírate con tranquilidad en tu país.</p>
-            <div class="hero-flags">
-                <img src="https://flagcdn.com/w80/us.png" alt="USA">
-                <img src="https://flagcdn.com/w80/mx.png" alt="México">
-                <img src="https://flagcdn.com/w80/co.png" alt="Colombia">
-            </div>
-            <div class="hero-cta">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Tu tranquilidad, nuestra prioridad</h1>
+                <p>Protección confiable para ti y tu familia. Seguros personalizados que te dan seguridad y tranquilidad en todo momento.</p>
                 <a href="https://wa.me/528117900032" class="btn-primary">
-                    <i class="fab fa-whatsapp"></i> Asesoría Gratis
+                    Cotiza ahora
                 </a>
-                <a href="#servicios" class="btn-secondary">Ver Servicios</a>
+            </div>
+            <div class="hero-image">
+                <img src="img/hero-mexico.jpg" alt="Familia protegida con VIDASURE">
+                <div class="hero-badge">
+                    <i class="fas fa-check"></i>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats -->
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3>500+</h3>
-                <p>Familias Protegidas</p>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Rápido y fácil</h3>
+                <p>Obtén una cotización en minutos, sin complicaciones.</p>
             </div>
-            <div class="stat-item">
-                <h3>15+</h3>
-                <p>Años de Experiencia</p>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <h3>Atención personalizada</h3>
+                <p>Asesoría humana real, siempre disponible para ayudarte.</p>
             </div>
-            <div class="stat-item">
-                <h3>98%</h3>
-                <p>Clientes Satisfechos</p>
-            </div>
-            <div class="stat-item">
-                <h3>24/7</h3>
-                <p>Atención Personalizada</p>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Protección real</h3>
+                <p>Planes que protegen a los que más quieres, ante cualquier evento.</p>
             </div>
         </div>
     </section>
 
-    <!-- Servicios -->
-    <section class="servicios" id="servicios">
-        <div class="section-header">
-            <h2>Nuestros <span>Servicios</span></h2>
-            <p>Soluciones integrales de protección financiera diseñadas especialmente para la comunidad migrante</p>
+    <!-- Seguros Section -->
+    <section class="seguros" id="seguros">
+        <h2 class="section-title">Tenemos un seguro para cada necesidad</h2>
+        <div class="seguros-grid">
+            <div class="seguro-card">
+                <div class="seguro-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="seguro-content">
+                    <h3>Seguro de Auto</h3>
+                    <p>Cobertura completa para protegerte mientras conduces.</p>
+                    <a href="https://wa.me/528117900032?text=Hola,%20me%20interesa%20el%20Seguro%20de%20Auto" class="seguro-link">
+                        Cotiza ahora <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="seguro-card">
+                <div class="seguro-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="seguro-content">
+                    <h3>Seguro de Vida</h3>
+                    <p>Protección financiera para ti y tus seres queridos.</p>
+                    <a href="https://wa.me/528117900032?text=Hola,%20me%20interesa%20el%20Seguro%20de%20Vida" class="seguro-link">
+                        Cotiza ahora <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="servicios-grid">
-            <div class="servicio-card">
-                <div class="servicio-icon">
-                    <i class="fas fa-umbrella"></i>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section" id="galeria">
+        <h2 class="section-title">Protegemos lo que más importa</h2>
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <div class="carousel-slide">
+                    <div class="carousel-item">
+                        <img src="img/promo-familia.jpg" alt="Familia protegida">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/promo-ejecutiva.jpg" alt="Profesionales">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/promo-trabajadora.jpg" alt="Trabajadores">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/promo-campo.jpg" alt="Campo">
+                    </div>
                 </div>
-                <h3>Seguros de Vida</h3>
-                <p>Protege a tu familia con cobertura internacional. Si algo te pasa, ellos estarán respaldados económicamente en México o Colombia.</p>
-                <a href="#contacto">Más información <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="servicio-card">
-                <div class="servicio-icon">
-                    <i class="fas fa-piggy-bank"></i>
+                <div class="carousel-slide">
+                    <div class="carousel-item">
+                        <img src="img/familia-mexico.jpg" alt="Familia México">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/familia-mexico-2.jpg" alt="Familia feliz">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/familia-colombia.jpg" alt="Familia Colombia">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/hero-colombia.jpg" alt="Hero Colombia">
+                    </div>
                 </div>
-                <h3>Ahorro para el Retiro</h3>
-                <p>Construye tu fondo de retiro mientras trabajas en EE.UU. Planifica tu futuro y disfruta tu jubilación en casa.</p>
-                <a href="#contacto">Más información <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="servicio-card">
-                <div class="servicio-icon">
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="carousel-dots">
+                <div class="carousel-dot active" data-slide="0"></div>
+                <div class="carousel-dot" data-slide="1"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section (Dark) -->
+    <section class="benefits">
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Rápido y fácil</h3>
+                <p>Obtén una cotización en minutos, sin complicaciones.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Acompañamiento humano</h3>
+                <p>Asesoría real con un equipo humano disponible para ti.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
                     <i class="fas fa-file-contract"></i>
                 </div>
-                <h3>Modalidad 40 IMSS</h3>
-                <p>Continúa cotizando en el IMSS desde Estados Unidos y asegura tu pensión mexicana. El mejor programa para migrantes.</p>
-                <a href="#modalidad40">Más información <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="servicio-card">
-                <div class="servicio-icon">
-                    <i class="fas fa-heartbeat"></i>
-                </div>
-                <h3>Gastos Médicos</h3>
-                <p>Cobertura médica para ti y tu familia en México o Colombia. Accede a hospitales privados sin preocupaciones.</p>
-                <a href="#contacto">Más información <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="servicio-card">
-                <div class="servicio-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h3>Seguro Educativo</h3>
-                <p>Asegura la educación de tus hijos. Aunque estés lejos, garantiza que puedan estudiar y cumplir sus sueños.</p>
-                <a href="#contacto">Más información <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="servicio-card">
-                <div class="servicio-icon">
-                    <i class="fas fa-home"></i>
-                </div>
-                <h3>Inversión Patrimonial</h3>
-                <p>Invierte en bienes raíces o activos en tu país de origen. Construye patrimonio para cuando decidas regresar.</p>
-                <a href="#contacto">Más información <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modalidad 40 -->
-    <section class="modalidad40" id="modalidad40">
-        <div class="modalidad-content">
-            <div class="modalidad-text">
-                <h2>¿Qué es la <span>Modalidad 40</span> del IMSS?</h2>
-                <p>La Modalidad 40 es un programa del Instituto Mexicano del Seguro Social que te permite seguir cotizando de forma voluntaria aunque no tengas un trabajo formal en México.</p>
-                <p><strong>¿Trabajas en Estados Unidos?</strong> Puedes inscribirte y acumular semanas cotizadas para asegurar una pensión digna cuando decidas retirarte.</p>
-                <ul class="modalidad-benefits">
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span>Acumula semanas cotizadas desde cualquier parte del mundo</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span>Aumenta tu salario promedio para una mejor pensión</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span>Acceso a servicios médicos del IMSS para tu familia en México</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span>Protección por invalidez y vida</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span>Pensión garantizada al cumplir los requisitos</span>
-                    </li>
-                </ul>
-                <a href="#contacto" class="btn-primary">
-                    <i class="fas fa-calculator"></i> Calcula tu Pensión
-                </a>
-            </div>
-            <div class="modalidad-images">
-                <img src="img/modalidad40-2.jpg" alt="Jubilación en México">
-                <img src="img/modalidad40-1.jpg" alt="Modalidad 40">
-                <img src="img/familia-mexico.jpg" alt="Familia protegida">
-            </div>
-        </div>
-    </section>
-
-    <!-- Países -->
-    <section class="paises" id="paises">
-        <div class="section-header">
-            <h2>Cobertura para <span>Tu País</span></h2>
-            <p>Soluciones especializadas para migrantes mexicanos y colombianos en Estados Unidos</p>
-        </div>
-        <div class="paises-grid">
-            <div class="pais-card">
-                <img src="img/familia-mexico-2.jpg" alt="Familia México">
-                <div class="pais-overlay">
-                    <div class="pais-flags">
-                        <img src="https://flagcdn.com/w40/us.png" alt="USA">
-                        <img src="https://flagcdn.com/w40/mx.png" alt="México">
-                    </div>
-                    <h3>México</h3>
-                    <p>Modalidad 40 IMSS, seguros de vida, gastos médicos y ahorro para tu retiro en México.</p>
-                    <a href="#contacto" class="btn-primary">Infórmate Hoy</a>
-                </div>
-            </div>
-            <div class="pais-card">
-                <img src="img/familia-colombia.jpg" alt="Familia Colombia">
-                <div class="pais-overlay">
-                    <div class="pais-flags">
-                        <img src="https://flagcdn.com/w40/us.png" alt="USA">
-                        <img src="https://flagcdn.com/w40/co.png" alt="Colombia">
-                    </div>
-                    <h3>Colombia</h3>
-                    <p>Seguros de vida, planes de ahorro, protección familiar y bienestar para tu retiro en Colombia.</p>
-                    <a href="#contacto" class="btn-primary">Infórmate Hoy</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galería Promocional -->
-    <section class="galeria" id="galeria">
-        <div class="section-header">
-            <h2>Protegemos a <span>Quienes Trabajan Duro</span></h2>
-            <p>Desde el campo hasta la oficina, cada trabajador migrante merece un retiro digno</p>
-        </div>
-        <div class="galeria-grid">
-            <div class="galeria-item">
-                <img src="img/promo-familia.jpg" alt="Jubílate en México">
-            </div>
-            <div class="galeria-item">
-                <img src="img/promo-ejecutiva.jpg" alt="Modalidad 40">
-            </div>
-            <div class="galeria-item">
-                <img src="img/promo-trabajadora.jpg" alt="Tu futuro en México">
-            </div>
-            <div class="galeria-item">
-                <img src="img/promo-campo.jpg" alt="Trabajadores del campo">
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonios -->
-    <section class="testimonios">
-        <div class="section-header">
-            <h2>Lo que dicen <span>Nuestros Clientes</span></h2>
-            <p>Historias reales de familias que ya aseguraron su futuro</p>
-        </div>
-        <div class="testimonios-grid">
-            <div class="testimonio-card">
-                <div class="testimonio-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"Llevo 12 años en Texas y gracias a VIDASURE ya tengo asegurada mi pensión en México. Mi familia está tranquila y yo también."</p>
-                <div class="testimonio-author">
-                    <div>
-                        <h4>Roberto M.</h4>
-                        <span>Houston, TX → Guanajuato</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonio-card">
-                <div class="testimonio-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"Me explicaron todo sobre la Modalidad 40 de manera clara. Ahora sé que cuando regrese a México, tendré mi pensión lista."</p>
-                <div class="testimonio-author">
-                    <div>
-                        <h4>María Elena S.</h4>
-                        <span>Los Angeles, CA → Michoacán</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonio-card">
-                <div class="testimonio-stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p>"Soy colombiano y encontré en García Villarreal el asesor perfecto. Mi familia en Bogotá está protegida y yo ahorro para mi retiro."</p>
-                <div class="testimonio-author">
-                    <div>
-                        <h4>Carlos A.</h4>
-                        <span>Miami, FL → Bogotá</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-section">
-        <h2>Tu Futuro No Puede Esperar</h2>
-        <p>Cada día que pasa sin protección es un riesgo para ti y tu familia. Agenda tu asesoría gratuita hoy.</p>
-        <a href="https://wa.me/528117900032" class="btn-dark">
-            <i class="fab fa-whatsapp"></i> Hablar con un Asesor
-        </a>
-    </section>
-
-    <!-- Contacto -->
-    <section class="contacto" id="contacto">
-        <div class="contacto-grid">
-            <div class="contacto-info">
-                <h2>¿Listo para <span>Asegurar tu Futuro</span>?</h2>
-                <p>Contáctanos hoy y recibe una asesoría personalizada sin costo. Te ayudamos a encontrar el plan perfecto para ti y tu familia.</p>
-                
-                <div class="contacto-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <div>
-                        <h4>WhatsApp</h4>
-                        <p>+52 81 1790 0032</p>
-                    </div>
-                </div>
-                <div class="contacto-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <h4>Teléfono</h4>
-                        <p>+52 81 1790 0032</p>
-                    </div>
-                </div>
-                <div class="contacto-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email</h4>
-                        <p>contacto@vidasure.com</p>
-                    </div>
-                </div>
-                <div class="contacto-item">
-                    <i class="fas fa-clock"></i>
-                    <div>
-                        <h4>Horario</h4>
-                        <p>Lunes a Sábado: 8:00 AM - 8:00 PM (CST)</p>
-                    </div>
-                </div>
-            </div>
-            <div class="contacto-form">
-                <h3>Solicita tu Asesoría Gratis</h3>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">WhatsApp / Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" required placeholder="+52 81 1790 0032">
-                    </div>
-                    <div class="form-group">
-                        <label for="pais">País de Origen</label>
-                        <select id="pais" name="pais" required>
-                            <option value="">Selecciona tu país</option>
-                            <option value="mexico">México</option>
-                            <option value="colombia">Colombia</option>
-                            <option value="otro">Otro</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="servicio">Servicio de Interés</label>
-                        <select id="servicio" name="servicio" required>
-                            <option value="">¿Qué te interesa?</option>
-                            <option value="modalidad40">Modalidad 40 IMSS</option>
-                            <option value="vida">Seguro de Vida</option>
-                            <option value="ahorro">Ahorro para el Retiro</option>
-                            <option value="gastos">Gastos Médicos</option>
-                            <option value="otro">Otro / No sé aún</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje (opcional)</label>
-                        <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu situación..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary">
-                        <i class="fas fa-paper-plane"></i> Enviar Solicitud
-                    </button>
-                </form>
+                <h3>Protección sin sorpresas</h3>
+                <p>Planes claros que realmente protegen, sin letra pequeña.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contacto">
         <div class="footer-content">
             <div class="footer-brand">
-                <img src="img/logo.jpg" alt="VIDASURE">
-                <p>Protegemos a las familias migrantes desde hace más de 15 años. Tu tranquilidad y la de los tuyos es nuestra prioridad.</p>
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="logo-text">
+                        VIDASURE
+                        <span>by García Villarreal</span>
+                    </div>
+                </div>
+                <p>Tu tranquilidad y la de tu familia es nuestra prioridad. Más de 15 años protegiendo lo que más importa.</p>
                 <div class="footer-social">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             <div class="footer-links">
-                <h4>Servicios</h4>
+                <h4>Seguros</h4>
                 <ul>
-                    <li><a href="#modalidad40">Modalidad 40</a></li>
-                    <li><a href="#servicios">Seguros de Vida</a></li>
-                    <li><a href="#servicios">Ahorro Retiro</a></li>
-                    <li><a href="#servicios">Gastos Médicos</a></li>
+                    <li><a href="#seguros">Seguro de Auto</a></li>
+                    <li><a href="#seguros">Seguro de Vida</a></li>
                 </ul>
             </div>
             <div class="footer-links">
-                <h4>Cobertura</h4>
+                <h4>Nosotros</h4>
                 <ul>
-                    <li><a href="#paises">México</a></li>
-                    <li><a href="#paises">Colombia</a></li>
-                    <li><a href="#contacto">Estados Unidos</a></li>
+                    <li><a href="#inicio">Quiénes somos</a></li>
+                    <li><a href="https://wa.me/528117900032">Contacto</a></li>
                 </ul>
             </div>
             <div class="footer-links">
-                <h4>Contacto</h4>
+                <h4>Recursos</h4>
                 <ul>
-                    <li><a href="https://wa.me/528117900032">WhatsApp</a></li>
-                    <li><a href="tel:+15555555555">Llamar</a></li>
-                    <li><a href="mailto:contacto@vidasure.com">Email</a></li>
+                    <li><a href="https://wa.me/528117900032">Recibe cotización</a></li>
+                    <li><a href="#seguros">Preguntas frecuentes</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 VIDASURE by García Villarreal. Todos los derechos reservados.</p>
-            <p>Diseñado con 💛 para la comunidad migrante</p>
+            <div class="footer-bottom-links">
+                <a href="#">Aviso de protección</a>
+                <a href="#">Términos y condiciones</a>
+            </div>
         </div>
     </footer>
 
@@ -1341,43 +975,64 @@
     </a>
 
     <script>
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+        // Carousel functionality
+        const carousel = document.getElementById('carousel');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+        const totalSlides = 2;
+
+        function goToSlide(index) {
+            currentSlide = index;
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            goToSlide(currentSlide);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                goToSlide(parseInt(dot.dataset.slide));
             });
         });
 
-        // Navbar background on scroll
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(10, 10, 10, 0.98)';
-            } else {
-                nav.style.background = 'rgba(10, 10, 10, 0.95)';
-            }
+        // Auto-advance carousel
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
+        }, 5000);
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
 
-        // Form submission (placeholder)
-        document.querySelector('.contacto-form form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nombre = document.getElementById('nombre').value;
-            const telefono = document.getElementById('telefono').value;
-            const pais = document.getElementById('pais').value;
-            const servicio = document.getElementById('servicio').value;
-            const mensaje = document.getElementById('mensaje').value;
-            
-            // Redirect to WhatsApp with message
-            const whatsappMsg = `Hola, soy ${nombre}. Me interesa información sobre ${servicio}. País: ${pais}. ${mensaje}`;
-            const whatsappUrl = `https://wa.me/528117900032?text=${encodeURIComponent(whatsappMsg)}`;
-            window.open(whatsappUrl, '_blank');
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
         });
     </script>
 </body>
