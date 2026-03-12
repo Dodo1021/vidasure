@@ -3,1135 +3,504 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIDASURE by García Villarreal | Seguros de Vida y Auto</title>
-    <meta name="description" content="Tu tranquilidad, nuestra prioridad. Seguros personalizados de vida y auto que te dan seguridad y tranquilidad en todo momento.">
+    <title>VidaSure | Protección Integral para Mexicanos en Estados Unidos</title>
+    <meta name="description" content="Asegura tu retiro y tu salud en México aunque trabajes en EE.UU. Planes de ahorro, seguros médicos y asistencia médica.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root {
-            /* Primary Colors */
-            --navy: #182234;
-            --navy-dark: #121826;
-            --gold: #C69C58;
-            --gold-light: #D4AF37;
-            
-            /* Backgrounds */
-            --bg-white: #FFFFFF;
-            --bg-light: #F9FAFB;
-            --bg-subtle: #F8F9FA;
-            
-            /* Text */
-            --text-heading: #222222;
-            --text-body: #555555;
-            --text-light: rgba(255, 255, 255, 0.7);
-            
-            /* Borders */
-            --border-subtle: #E5E7EB;
-            
-            /* Shadows */
-            --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.06);
-            --shadow-card-hover: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --shadow-button: 0 4px 14px rgba(198, 156, 88, 0.35);
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: #1a1a2e; background: #fff; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-white);
-            color: var(--text-body);
-            line-height: 1.6;
-            font-size: 16px;
-        }
-
-        /* ==================== HEADER ==================== */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background: var(--navy);
+        /* ───── NAVBAR ───── */
+        nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 5%;
-            z-index: 1000;
+            padding: 16px 48px;
+            background: #fff;
+            box-shadow: 0 1px 12px rgba(0,0,0,0.07);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            text-decoration: none;
         }
-
         .logo-icon {
-            width: 42px;
-            height: 42px;
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #1e90d4, #0a6bb5);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
+            font-size: 20px;
         }
-
-        .logo-icon svg {
-            width: 100%;
-            height: 100%;
-        }
-
         .logo-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--bg-white);
-            letter-spacing: 1px;
-            line-height: 1.2;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a2e;
+            line-height: 1;
         }
-
         .logo-text span {
-            display: block;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 500;
-            color: var(--gold);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            font-size: 10px;
+            color: #888;
+            font-weight: 400;
         }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
         .nav-links {
             display: flex;
             gap: 32px;
             list-style: none;
         }
-
         .nav-links a {
-            font-size: 0.9rem;
+            text-decoration: none;
+            color: #444;
+            font-size: 14px;
             font-weight: 500;
-            color: var(--bg-white);
-            text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.2s;
         }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        .btn-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 24px;
-            background: var(--gold);
-            color: var(--bg-white);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-cta:hover {
-            background: var(--gold-light);
-            box-shadow: var(--shadow-button);
-            transform: translateY(-2px);
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .menu-toggle span {
-            width: 24px;
-            height: 2px;
-            background: var(--bg-white);
-            transition: all 0.3s;
-        }
-
-        /* ==================== HERO SECTION ==================== */
-        .hero {
-            padding: 160px 5% 120px;
-            background: var(--bg-white);
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Decorative background curves */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 60%;
-            height: 100%;
-            background: linear-gradient(135deg, transparent 40%, rgba(249, 250, 251, 0.8) 100%);
-            pointer-events: none;
-        }
-
-        .hero-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 42% 58%;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content {
-            padding-right: 20px;
-        }
-
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.2rem, 4vw, 3rem);
-            font-weight: 700;
-            color: var(--text-heading);
-            line-height: 1.25;
-            margin-bottom: 24px;
-        }
-
-        .hero-content p {
-            font-size: 1rem;
-            color: var(--text-body);
-            line-height: 1.7;
-            margin-bottom: 32px;
-            max-width: 400px;
-        }
-
-        .btn-cta-large {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 32px;
-            background: var(--gold);
-            color: var(--bg-white);
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
+        .nav-links a:hover { color: #1e90d4; }
+        .btn-phone {
+            background: #1e90d4;
+            color: white;
+            padding: 10px 20px;
             border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-button);
-        }
-
-        .btn-cta-large:hover {
-            background: var(--gold-light);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(198, 156, 88, 0.4);
-        }
-
-        .hero-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-illustration {
-            width: 100%;
-            max-width: 580px;
-            height: auto;
-            border-radius: 20px;
-        }
-
-        /* ==================== FEATURE CARDS (FLOATING) ==================== */
-        .features-section {
-            padding: 0 5%;
-            margin-top: -60px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .features-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .feature-card {
-            background: var(--bg-white);
-            padding: 28px 24px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-card-hover);
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(198, 156, 88, 0.12);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .feature-icon i {
-            font-size: 1.1rem;
-            color: var(--gold);
-        }
-
-        .feature-content h3 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-heading);
-            margin-bottom: 6px;
-        }
-
-        .feature-content p {
-            font-size: 0.875rem;
-            color: var(--text-body);
-            line-height: 1.6;
-        }
-
-        /* ==================== SEGUROS SECTION ==================== */
-        .seguros-section {
-            padding: 100px 5%;
-            background: var(--bg-white);
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.75rem, 3.5vw, 2.25rem);
             font-weight: 600;
-            color: var(--text-heading);
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .seguros-grid {
-            max-width: 920px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 28px;
-        }
-
-        .seguro-card {
-            background: var(--bg-subtle);
-            border-radius: 12px;
-            padding: 32px 28px;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.3s ease;
-        }
-
-        .seguro-card:hover {
-            box-shadow: var(--shadow-card-hover);
-        }
-
-        .seguro-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .seguro-icon {
-            width: 72px;
-            height: 72px;
-            flex-shrink: 0;
-        }
-
-        .seguro-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .seguro-info h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--gold);
-            margin-bottom: 8px;
-        }
-
-        .seguro-info p {
-            font-size: 0.9rem;
-            color: var(--text-body);
-            line-height: 1.6;
-        }
-
-        .seguro-cta {
-            margin-top: auto;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-subtle);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .seguro-cta a {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--gold);
+            font-size: 14px;
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: gap 0.3s ease;
+            transition: background 0.2s;
         }
+        .btn-phone:hover { background: #0a6bb5; }
 
-        .seguro-cta a:hover {
-            gap: 12px;
-        }
-
-        .seguro-cta i {
-            font-size: 0.75rem;
-        }
-
-        /* ==================== CAROUSEL SECTION ==================== */
-        .carousel-section {
-            padding: 80px 5%;
-            background: var(--bg-light);
-        }
-
-        .carousel-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .carousel-wrapper {
-            overflow: hidden;
-            border-radius: 16px;
-            box-shadow: var(--shadow-card-hover);
-        }
-
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-            flex-shrink: 0;
-            background: var(--bg-subtle);
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: auto;
-            max-height: 600px;
-            object-fit: contain;
-            display: block;
-        }
-
-        .carousel-controls {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            transform: translateY(-50%);
-            display: flex;
-            justify-content: space-between;
-            padding: 0 16px;
-            pointer-events: none;
-        }
-
-        .carousel-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            color: var(--navy);
-            font-size: 1.2rem;
-            cursor: pointer;
+        /* ───── HERO ───── */
+        .hero {
             display: flex;
             align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            pointer-events: auto;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        .carousel-btn:hover {
-            background: var(--gold);
-            color: white;
-        }
-
-        .carousel-nav {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .carousel-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--border-subtle);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-dot.active {
-            background: var(--gold);
-            width: 28px;
-            border-radius: 5px;
-        }
-
-        /* ==================== BENEFITS SECTION (DARK) ==================== */
-        .benefits-section {
-            background: var(--navy);
-            position: relative;
-        }
-
-        .benefits-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gold);
-        }
-
-        .benefits-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 80px 5%;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            min-height: 480px;
+            background: linear-gradient(135deg, #eaf4fd 0%, #d6eaf8 50%, #f0f9ff 100%);
+            padding: 60px 48px;
             gap: 40px;
         }
-
-        .benefit-card {
-            text-align: center;
-            padding: 20px;
+        .hero-content {
+            flex: 1;
+            max-width: 520px;
         }
-
-        .benefit-icon {
-            width: 64px;
-            height: 64px;
-            margin: 0 auto 20px;
-            border: 2px solid var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .benefit-icon i {
-            font-size: 1.4rem;
-            color: var(--gold);
-        }
-
-        .benefit-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--bg-white);
-            margin-bottom: 12px;
-        }
-
-        .benefit-card p {
-            font-size: 0.875rem;
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        /* ==================== FOOTER ==================== */
-        footer {
-            background: var(--navy-dark);
-            padding: 60px 5% 30px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-            gap: 40px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-brand .logo {
+        .hero-content h2 {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.15;
+            color: #1a1a2e;
             margin-bottom: 16px;
         }
-
-        .footer-brand > p {
-            font-size: 0.875rem;
-            color: var(--text-light);
-            line-height: 1.7;
-            margin-bottom: 20px;
-            max-width: 280px;
+        .hero-content p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: #1e90d4;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-primary:hover {
+            background: #0a6bb5;
+            transform: translateY(-1px);
+        }
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-image img {
+            max-width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(30,144,212,0.15);
         }
 
+        /* ───── SERVICIOS ───── */
+        .servicios {
+            padding: 64px 48px;
+            background: #fff;
+        }
+        .servicios h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 48px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            border-radius: 16px;
+            padding: 24px 16px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 4px;
+        }
+        .card h3 {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #1a1a2e;
+        }
+        .card p {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .btn-card {
+            margin-top: auto;
+            padding: 7px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            color: white;
+            transition: opacity 0.2s;
+        }
+        .btn-card:hover { opacity: 0.85; }
+
+        /* Card colors */
+        .card-1 { background: #FFF8E7; }
+        .card-1 .card-icon { background: #FFF0C0; }
+        .card-1 .btn-card { background: #E8A020; }
+
+        .card-2 { background: #E8F8F0; }
+        .card-2 .card-icon { background: #C5EFDB; }
+        .card-2 .btn-card { background: #27AE60; }
+
+        .card-3 { background: #E8F4FD; }
+        .card-3 .card-icon { background: #BDE0F7; }
+        .card-3 .btn-card { background: #1e90d4; }
+
+        .card-4 { background: #FFF3E8; }
+        .card-4 .card-icon { background: #FFD9B5; }
+        .card-4 .btn-card { background: #E8731A; }
+
+        .card-5 { background: #EAF4FD; }
+        .card-5 .card-icon { background: #BDE0F7; }
+        .card-5 .btn-card { background: #1e90d4; }
+
+        .card-6 { background: #F3F4F6; }
+        .card-6 .card-icon { background: #E5E7EB; }
+        .card-6 .btn-card { background: #9CA3AF; }
+        .card-6 h3 { color: #9CA3AF; }
+        .card-6 p { color: #9CA3AF; }
+
+        /* ───── CTA ───── */
+        .cta-section {
+            background: linear-gradient(180deg, #e8f4fd 0%, #d0e9f7 100%);
+            padding: 72px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 60px;
+            background: white;
+            clip-path: ellipse(60% 100% at 50% 0%);
+        }
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 60px;
+            background: #f0f8ff;
+            clip-path: ellipse(60% 100% at 50% 100%);
+        }
+        .cta-inner {
+            position: relative;
+            z-index: 1;
+        }
+        .cta-section h2 {
+            font-size: 34px;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 12px;
+        }
+        .cta-section p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 32px;
+        }
+
+        /* ───── FOOTER ───── */
+        footer {
+            background: #f0f8ff;
+            padding: 40px 48px 24px;
+        }
+        .footer-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #d0e4f0;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .footer-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e90d4;
+        }
         .footer-social {
             display: flex;
             gap: 12px;
+            align-items: center;
         }
-
         .footer-social a {
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
+            background: #d0e4f0;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--bg-white);
-            font-size: 0.875rem;
-            transition: all 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            background: var(--gold);
-        }
-
-        .footer-links h4 {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--bg-white);
-            margin-bottom: 20px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            font-size: 0.875rem;
-            color: var(--text-light);
+            color: #1e90d4;
+            font-size: 14px;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: background 0.2s;
         }
-
-        .footer-links a:hover {
-            color: var(--gold);
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 24px;
+        .footer-social a:hover { background: #1e90d4; color: white; }
+        .footer-social-label {
+            font-size: 13px;
+            color: #666;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 6px;
+        }
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 20px;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 12px;
         }
-
-        .footer-bottom p {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .footer-legal {
+        .footer-links {
             display: flex;
             gap: 24px;
+            list-style: none;
+            flex-wrap: wrap;
         }
-
-        .footer-legal a {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.5);
+        .footer-links a {
             text-decoration: none;
-            transition: color 0.3s ease;
+            color: #555;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover { color: #1e90d4; }
+        .footer-separator {
+            color: #ccc;
         }
 
-        .footer-legal a:hover {
-            color: var(--gold);
-        }
-
-        /* ==================== WHATSAPP FLOAT ==================== */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            width: 56px;
-            height: 56px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.6rem;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            z-index: 999;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
-        }
-
-        /* ==================== RESPONSIVE ==================== */
+        /* ───── RESPONSIVE ───── */
         @media (max-width: 1024px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-
-            .hero-content {
-                padding-right: 0;
-                order: 2;
-            }
-
-            .hero-content p {
-                max-width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-image {
-                order: 1;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .carousel-slide {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
+            .cards-grid { grid-template-columns: repeat(3, 1fr); }
         }
-
         @media (max-width: 768px) {
-            header {
-                height: 70px;
-            }
-
-            .nav-menu {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .hero {
-                padding: 120px 5% 80px;
-                min-height: auto;
-            }
-
-            .features-section {
-                margin-top: -40px;
-            }
-
-            .seguros-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .carousel-slide {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .carousel-item img {
-                height: 180px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-social {
-                justify-content: center;
-            }
-
-            .footer-brand > p {
-                max-width: 100%;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-legal {
-                justify-content: center;
-            }
+            nav { padding: 14px 20px; }
+            .nav-links { display: none; }
+            .hero { flex-direction: column; padding: 40px 20px; }
+            .hero-content h2 { font-size: 30px; }
+            .servicios { padding: 48px 20px; }
+            .cards-grid { grid-template-columns: repeat(2, 1fr); }
+            .cta-section { padding: 60px 20px; }
+            footer { padding: 32px 20px 20px; }
         }
-
         @media (max-width: 480px) {
-            .carousel-slide {
-                grid-template-columns: 1fr;
-            }
-
-            .carousel-item img {
-                height: 220px;
-            }
-
-            .seguro-header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
+            .cards-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
-    <!-- ==================== HEADER ==================== -->
-    <header>
-        <div class="logo">
+
+<!-- NAVBAR -->
+<nav>
+    <a href="#" class="logo">
+        <div class="logo-icon">
+            <i class="fas fa-shield-heart"></i>
+        </div>
+        <div class="logo-text">
+            <h1>VidaSure</h1>
+            <span>Cuida Hoy, Disfruta Mañana</span>
+        </div>
+    </a>
+    <ul class="nav-links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#servicios">Planes de Ahorro</a></li>
+        <li><a href="#servicios">Seguros Médicos</a></li>
+        <li><a href="#servicios">Asistencia Médica</a></li>
+    </ul>
+    <a href="tel:+18661234567" class="btn-phone">
+        <i class="fas fa-phone"></i> +1 866 123 4567
+    </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h2>Protección Integral para Mexicanos en Estados Unidos</h2>
+        <p>Asegura tu Retiro y tu Salud en México aunque trabajes en EE.UU.</p>
+        <a href="https://wa.me/18661234567" class="btn-primary">Habla con un Asesor</a>
+    </div>
+    <div class="hero-image">
+        <img src="img/familia-mexico.jpg" alt="Familia mexicana feliz con bandera de México">
+    </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <div class="cards-grid">
+
+        <div class="card card-1">
+            <div class="card-icon">🐷</div>
+            <h3>Planes de Ahorro</h3>
+            <p>Construye tu retiro en México mientras trabajas en Estados Unidos.</p>
+            <a href="https://wa.me/18661234567" class="btn-card">Más Información</a>
+        </div>
+
+        <div class="card card-2">
+            <div class="card-icon">🏥</div>
+            <h3>Seguro de Médicos</h3>
+            <p>Acceso a hospitales privados en México con costos accesibles.</p>
+            <a href="https://wa.me/18661234567" class="btn-card">Más Información</a>
+        </div>
+
+        <div class="card card-3">
+            <div class="card-icon">🩺</div>
+            <h3>Asistencia Médica</h3>
+            <p>Orientación médica y conexión con médicos especialistas.</p>
+            <a href="https://wa.me/18661234567" class="btn-card">Más Información</a>
+        </div>
+
+        <div class="card card-4">
+            <div class="card-icon">📋</div>
+            <h3>Apoyo en Enfermedad</h3>
+            <p>Acompañamiento médico cuando más lo necesitas.</p>
+            <a href="https://wa.me/18661234567" class="btn-card">Más Información</a>
+        </div>
+
+        <div class="card card-5">
+            <div class="card-icon">🏛️</div>
+            <h3>IMSS y Seguridad Social</h3>
+            <p>Te orientamos para aprovechar los servicios de salud en México.</p>
+            <a href="https://wa.me/18661234567" class="btn-card">Más Información</a>
+        </div>
+
+        <div class="card card-6">
+            <div class="card-icon">💬</div>
+            <h3>Terapia Psicológica Online</h3>
+            <p>Psicólogos en México que atienden desde cualquier lugar.</p>
+            <a href="https://wa.me/18661234567" class="btn-card">Más Información</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="cta-inner">
+        <h2>Asegura un Futuro Tranquilo en México</h2>
+        <p>Estamos aquí para ayudarte a proteger lo que más importa mientras trabajas en Estados Unidos.</p>
+        <a href="https://wa.me/18661234567" class="btn-primary">Habla con un Asesor</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-top">
+        <a href="#" class="logo">
             <div class="logo-icon">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="24" cy="24" r="22" fill="#C69C58" fill-opacity="0.15"/>
-                    <path d="M24 8C24 8 12 16 12 26C12 32.627 17.373 38 24 38C30.627 38 36 32.627 36 26C36 16 24 8 24 8Z" stroke="#C69C58" stroke-width="2.5" fill="none"/>
-                    <path d="M24 14C24 14 17 19 17 25C17 28.866 20.134 32 24 32C27.866 32 31 28.866 31 25C31 19 24 14 24 14Z" fill="#C69C58"/>
-                    <path d="M21 24L23.5 26.5L28 22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                <i class="fas fa-shield-heart"></i>
             </div>
             <div class="logo-text">
-                <h1>VIDASURE</h1>
-                <span>by García Villarreal</span>
+                <h1>VidaSure</h1>
+                <span>Cuida Hoy, Disfruta Mañana</span>
+            </div>
+        </a>
+
+        <div class="footer-phone">
+            <i class="fas fa-phone"></i> +1 866 123 4567
+        </div>
+
+        <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+            <div class="footer-social-label">
+                <i class="fab fa-facebook" style="color:#1877F2"></i>
+                vidasuremex
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fas fa-phone"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
-        <div class="nav-menu">
-            <ul class="nav-links">
-                <li><a href="#seguros">Seguro de Auto</a></li>
-                <li><a href="#seguros">Seguro de Vida</a></li>
-                <li><a href="#contacto">Buscar póliza</a></li>
-            </ul>
-            <a href="https://wa.me/528117900032" class="btn-cta">Cotiza ahora</a>
-        </div>
-        <div class="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
+    </div>
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Tu tranquilidad,<br>nuestra prioridad</h1>
-                <p>Protección confiable para ti y tu familia. Seguros personalizados que te dan seguridad y tranquilidad en todo momento.</p>
-                <a href="https://wa.me/528117900032" class="btn-cta-large">Cotiza ahora</a>
-            </div>
-            <div class="hero-image">
-                <img src="img/hero-ilustracion.png" alt="Familia protegida con VIDASURE" class="hero-illustration">
-            </div>
-        </div>
-    </section>
+    <div class="footer-bottom">
+        <ul class="footer-links">
+            <li><a href="#">Planes de Ahorro</a></li>
+            <li class="footer-separator">|</li>
+            <li><a href="#">Seguros</a></li>
+            <li class="footer-separator">|</li>
+            <li><a href="#">Médicos</a></li>
+            <li class="footer-separator">|</li>
+            <li><a href="#">Asistencia Médica</a></li>
+            <li class="footer-separator">|</li>
+            <li><a href="#">Aviso de Privacidad</a></li>
+            <li class="footer-separator">|</li>
+            <li><a href="#">Términos y Condiciones</a></li>
+        </ul>
+        <a href="#" style="color:#1e90d4; font-size:20px;"><i class="fab fa-whatsapp"></i></a>
+    </div>
+</footer>
 
-    <!-- ==================== FEATURE CARDS ==================== -->
-    <section class="features-section">
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-clock"></i>
-                </div>
-                <div class="feature-content">
-                    <h3>Rápido y fácil</h3>
-                    <p>Obtén una cotización en minutos, sin complicaciones.</p>
-                </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <div class="feature-content">
-                    <h3>Atención personalizada</h3>
-                    <p>Asesoría humana real, siempre disponible para ayudarte.</p>
-                </div>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <div class="feature-content">
-                    <h3>Protección real</h3>
-                    <p>Planes que protegen a los que más quieres, ante cualquier evento.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== SEGUROS SECTION ==================== -->
-    <section class="seguros-section" id="seguros">
-        <h2 class="section-title">Tenemos un seguro para cada necesidad</h2>
-        <div class="seguros-grid">
-            <div class="seguro-card">
-                <div class="seguro-header">
-                    <div class="seguro-icon">
-                        <img src="img/icon-auto.png" alt="Seguro de Auto">
-                    </div>
-                    <div class="seguro-info">
-                        <h3>Seguro de Auto</h3>
-                        <p>Cobertura completa para protegerte mientras conduces.</p>
-                    </div>
-                </div>
-                <div class="seguro-cta">
-                    <a href="https://wa.me/528117900032?text=Hola,%20me%20interesa%20el%20Seguro%20de%20Auto">
-                        Cotiza ahora <i class="fas fa-chevron-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="seguro-card">
-                <div class="seguro-header">
-                    <div class="seguro-icon">
-                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="40" cy="22" r="12" fill="#C69C58"/>
-                            <circle cx="24" cy="28" r="8" fill="#C69C58" fill-opacity="0.7"/>
-                            <circle cx="56" cy="28" r="8" fill="#C69C58" fill-opacity="0.7"/>
-                            <path d="M40 38C28 38 20 48 20 58V65C20 67 22 68 24 68H56C58 68 60 67 60 65V58C60 48 52 38 40 38Z" fill="#C69C58"/>
-                            <path d="M24 42C16 44 12 50 12 58V62C12 64 14 65 16 65H22" fill="#C69C58" fill-opacity="0.7"/>
-                            <path d="M56 42C64 44 68 50 68 58V62C68 64 66 65 64 65H58" fill="#C69C58" fill-opacity="0.7"/>
-                            <path d="M35 50L38 53L45 46" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="seguro-info">
-                        <h3>Seguro de Vida</h3>
-                        <p>Protección financiera para ti y tus seres queridos.</p>
-                    </div>
-                </div>
-                <div class="seguro-cta">
-                    <a href="https://wa.me/528117900032?text=Hola,%20me%20interesa%20el%20Seguro%20de%20Vida">
-                        Cotiza ahora <i class="fas fa-chevron-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== CAROUSEL SECTION ==================== -->
-    <section class="carousel-section">
-        <h2 class="section-title">Protegemos lo que más importa</h2>
-        <div class="carousel-container">
-            <div class="carousel-wrapper">
-                <div class="carousel" id="carousel">
-                    <div class="carousel-slide">
-                        <img src="img/promo-familia.jpg" alt="Familia protegida">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="img/promo-ejecutiva.jpg" alt="Profesionales">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="img/promo-trabajadora.jpg" alt="Trabajadores">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="img/promo-campo.jpg" alt="Campo">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="img/familia-mexico.jpg" alt="Familia México">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="img/familia-mexico-2.jpg" alt="Familia feliz">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="img/familia-colombia.jpg" alt="Familia Colombia">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="img/hero-colombia.jpg" alt="Hero Colombia">
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-controls">
-                <button class="carousel-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-                <button class="carousel-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-            </div>
-            <div class="carousel-nav">
-                <div class="carousel-dot active" data-slide="0"></div>
-                <div class="carousel-dot" data-slide="1"></div>
-                <div class="carousel-dot" data-slide="2"></div>
-                <div class="carousel-dot" data-slide="3"></div>
-                <div class="carousel-dot" data-slide="4"></div>
-                <div class="carousel-dot" data-slide="5"></div>
-                <div class="carousel-dot" data-slide="6"></div>
-                <div class="carousel-dot" data-slide="7"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== BENEFITS SECTION (DARK) ==================== -->
-    <section class="benefits-section">
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-bolt"></i>
-                </div>
-                <h3>Rápido y fácil</h3>
-                <p>Obtén una cotización en minutos, sin complicaciones.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-                <h3>Acompañamiento humano</h3>
-                <p>Asesoría real con un equipo humano disponible para ti.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <i class="fas fa-file-shield"></i>
-                </div>
-                <h3>Protección sin sorpresas</h3>
-                <p>Planes claros que realmente protegen, sin letra pequeña.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer id="contacto">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="24" cy="24" r="22" fill="#C69C58" fill-opacity="0.15"/>
-                            <path d="M24 8C24 8 12 16 12 26C12 32.627 17.373 38 24 38C30.627 38 36 32.627 36 26C36 16 24 8 24 8Z" stroke="#C69C58" stroke-width="2.5" fill="none"/>
-                            <path d="M24 14C24 14 17 19 17 25C17 28.866 20.134 32 24 32C27.866 32 31 28.866 31 25C31 19 24 14 24 14Z" fill="#C69C58"/>
-                            <path d="M21 24L23.5 26.5L28 22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        <h1>VIDASURE</h1>
-                        <span>by García Villarreal</span>
-                    </div>
-                </div>
-                <p>Tu tranquilidad y la de tu familia es nuestra prioridad.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h4>Seguros</h4>
-                <ul>
-                    <li><a href="#seguros">Seguro de Auto</a></li>
-                    <li><a href="#seguros">Seguro de Vida</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Nosotros</h4>
-                <ul>
-                    <li><a href="#">Venta a oficinas</a></li>
-                    <li><a href="https://wa.me/528117900032">Contacto</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Recursos</h4>
-                <ul>
-                    <li><a href="https://wa.me/528117900032">Recibe cotización</a></li>
-                    <li><a href="#">Preguntas frecuentes</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 VIDASURE by García Villarreal. Todos los derechos reservados.</p>
-            <div class="footer-legal">
-                <a href="#">Aviso de protección</a>
-                <a href="#">Términos y condiciones</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ==================== WHATSAPP FLOAT ==================== -->
-    <a href="https://wa.me/528117900032" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- ==================== SCRIPTS ==================== -->
-    <script>
-        // Carousel
-        const carousel = document.getElementById('carousel');
-        const dots = document.querySelectorAll('.carousel-dot');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        let currentSlide = 0;
-        const totalSlides = 8;
-
-        function goToSlide(index) {
-            currentSlide = index;
-            if (currentSlide < 0) currentSlide = totalSlides - 1;
-            if (currentSlide >= totalSlides) currentSlide = 0;
-            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentSlide);
-            });
-        }
-
-        prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
-        nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
-
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                goToSlide(parseInt(dot.dataset.slide));
-            });
-        });
-
-        // Auto-advance every 4 seconds
-        setInterval(() => {
-            goToSlide(currentSlide + 1);
-        }, 4000);
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                }
-            });
-        });
-    </script>
 </body>
 </html>
