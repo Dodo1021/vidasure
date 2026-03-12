@@ -215,18 +215,18 @@
             gap: 8px;
         }
         .card-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 12px;
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             position: relative;
         }
         .card-icon img, .card-icon svg {
-            width: 32px;
-            height: 32px;
+            width: 60px;
+            height: 60px;
         }
         .card h3 {
             font-size: 12px;
@@ -256,35 +256,35 @@
         }
         .btn-card:hover { opacity: 0.85; }
 
-        /* Card 1 - Planes de Ahorro (Yellow/Orange) */
-        .card-1 { background: #FFF8E8; }
-        .card-1 .card-icon { background: #FFE4A8; }
-        .card-1 .btn-card { background: #E8A030; }
+        /* Card 1 - Planes de Ahorro (Yellow/Cream) */
+        .card-1 { background: linear-gradient(180deg, #FEF3D7 0%, #FDE9B9 100%); }
+        .card-1 .card-icon { background: transparent; }
+        .card-1 .btn-card { background: #E8983A; }
 
-        /* Card 2 - Seguro de Médicos (Blue) */
-        .card-2 { background: #E8F4FC; }
-        .card-2 .card-icon { background: #B8DCF4; }
-        .card-2 .btn-card { background: #2a8fd4; }
+        /* Card 2 - Seguro de Médicos (White) */
+        .card-2 { background: #FFFFFF; border: 1px solid #E8EEF2; }
+        .card-2 .card-icon { background: #E8F5EC; border-radius: 14px; }
+        .card-2 .btn-card { background: #4CAF50; }
 
-        /* Card 3 - Asistencia Médica (Green) */
-        .card-3 { background: #E8F8F0; }
-        .card-3 .card-icon { background: #B8E8CC; }
-        .card-3 .btn-card { background: #3d9e5a; }
+        /* Card 3 - Asistencia Médica (Teal/Cyan light) */
+        .card-3 { background: linear-gradient(180deg, #E0F4F4 0%, #C8ECEC 100%); }
+        .card-3 .card-icon { background: #D0F0F0; border-radius: 14px; }
+        .card-3 .btn-card { background: #26A69A; }
 
-        /* Card 4 - Apoyo en Enfermedad (Yellow) */
-        .card-4 { background: #FFF8E8; }
-        .card-4 .card-icon { background: #FFE4A8; }
-        .card-4 .btn-card { background: #E8A030; }
+        /* Card 4 - Apoyo en Enfermedad (White) */
+        .card-4 { background: #FFFFFF; border: 1px solid #E8EEF2; }
+        .card-4 .card-icon { background: #FFF0E0; border-radius: 14px; }
+        .card-4 .btn-card { background: #E8983A; }
 
-        /* Card 5 - IMSS (Blue) */
-        .card-5 { background: #E8F4FC; }
-        .card-5 .card-icon { background: #B8DCF4; }
-        .card-5 .btn-card { background: #2a8fd4; }
+        /* Card 5 - IMSS (Blue light) */
+        .card-5 { background: linear-gradient(180deg, #E3F2FD 0%, #BBDEFB 100%); }
+        .card-5 .card-icon { background: #DBEAFE; border-radius: 14px; }
+        .card-5 .btn-card { background: #2196F3; }
 
-        /* Card 6 - Terapia Psicológica (Pink/Coral) */
-        .card-6 { background: #FFF0F0; }
-        .card-6 .card-icon { background: #FFDADA; }
-        .card-6 .btn-card { background: #E87070; }
+        /* Card 6 - Terapia Psicológica (White/Light pink) */
+        .card-6 { background: linear-gradient(180deg, #FFF5F5 0%, #FFE8E8 100%); }
+        .card-6 .card-icon { background: #F0F0F0; border-radius: 14px; }
+        .card-6 .btn-card { background: #9E9E9E; opacity: 0.85; }
 
         /* ───── CTA ───── */
         .cta-section {
@@ -589,18 +589,43 @@
         <!-- Card 1: Planes de Ahorro -->
         <div class="card card-1">
             <div class="card-icon">
-                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Piggy bank -->
-                    <ellipse cx="20" cy="22" rx="14" ry="11" fill="#E87070"/>
-                    <circle cx="28" cy="18" r="2" fill="#c85050"/>
-                    <ellipse cx="12" cy="25" rx="2" ry="3" fill="#c85050"/>
-                    <rect x="8" y="30" width="4" height="5" rx="1" fill="#c85050"/>
-                    <rect x="22" y="30" width="4" height="5" rx="1" fill="#c85050"/>
-                    <!-- Mexican flag on piggy -->
-                    <circle cx="20" cy="10" r="7" fill="white" stroke="#ddd" stroke-width="0.5"/>
-                    <path d="M14,7 L14,13 L17,13 L17,7 Z" fill="#006847"/>
-                    <path d="M17,7 L17,13 L23,13 L23,7 Z" fill="white"/>
-                    <path d="M23,7 L23,13 L26,13 L26,7 Z" fill="#CE1126"/>
+                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Piggy bank body - salmon/pink color -->
+                    <ellipse cx="40" cy="48" rx="26" ry="20" fill="#F5A5A0"/>
+                    <!-- Piggy bank darker shading -->
+                    <ellipse cx="42" cy="52" rx="22" ry="16" fill="#E89A95" opacity="0.6"/>
+                    <!-- Piggy snout -->
+                    <ellipse cx="62" cy="50" rx="6" ry="5" fill="#F0908A"/>
+                    <circle cx="60" cy="49" r="1.5" fill="#D07A75"/>
+                    <circle cx="64" cy="49" r="1.5" fill="#D07A75"/>
+                    <!-- Piggy ear -->
+                    <ellipse cx="24" cy="34" rx="6" ry="8" fill="#F5A5A0"/>
+                    <ellipse cx="24" cy="34" rx="4" ry="5" fill="#E89A95"/>
+                    <!-- Piggy eye -->
+                    <circle cx="52" cy="40" r="2.5" fill="#333"/>
+                    <circle cx="53" cy="39" r="1" fill="white"/>
+                    <!-- Piggy legs -->
+                    <rect x="22" y="62" width="8" height="10" rx="3" fill="#E89A95"/>
+                    <rect x="50" y="62" width="8" height="10" rx="3" fill="#E89A95"/>
+                    <!-- Coin slot on top -->
+                    <rect x="35" y="28" width="10" height="3" rx="1.5" fill="#D07A75"/>
+                    
+                    <!-- Mexican flag pole -->
+                    <rect x="28" y="4" width="2" height="30" fill="#8B6914"/>
+                    <circle cx="29" cy="4" r="2" fill="#DAA520"/>
+                    
+                    <!-- Mexican flag -->
+                    <rect x="30" y="4" width="18" height="12" fill="white"/>
+                    <rect x="30" y="4" width="6" height="12" fill="#006847"/>
+                    <rect x="42" y="4" width="6" height="12" fill="#CE1126"/>
+                    <!-- Eagle emblem (simplified) -->
+                    <circle cx="39" cy="10" r="2" fill="#8B4513"/>
+                    
+                    <!-- Golden coin -->
+                    <circle cx="58" cy="22" r="10" fill="#FFD700"/>
+                    <circle cx="58" cy="22" r="8" fill="#FFC200"/>
+                    <circle cx="58" cy="22" r="6" fill="#FFD700"/>
+                    <text x="58" y="25" font-size="8" fill="#B8860B" text-anchor="middle" font-weight="bold">$</text>
                 </svg>
             </div>
             <h3>Planes<br>de Ahorro</h3>
@@ -611,11 +636,29 @@
         <!-- Card 2: Seguro de Médicos -->
         <div class="card card-2">
             <div class="card-icon">
-                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Shield with cross -->
-                    <path d="M20 4C14 4 8 7 8 12V20C8 28 20 36 20 36C20 36 32 28 32 20V12C32 7 26 4 20 4Z" fill="#2a8fd4"/>
-                    <rect x="17" y="12" width="6" height="16" rx="1" fill="white"/>
-                    <rect x="12" y="17" width="16" height="6" rx="1" fill="white"/>
+                <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Green rounded background -->
+                    <rect x="4" y="4" width="52" height="52" rx="14" fill="#E8F5EC"/>
+                    
+                    <!-- Stethoscope tube -->
+                    <path d="M22 18 C22 18 16 20 16 28 C16 36 22 38 28 38" stroke="#2E7D32" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <path d="M38 18 C38 18 44 20 44 28 C44 36 38 38 32 38" stroke="#2E7D32" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    
+                    <!-- Stethoscope earpieces -->
+                    <circle cx="22" cy="16" r="3" fill="#2E7D32"/>
+                    <circle cx="38" cy="16" r="3" fill="#2E7D32"/>
+                    
+                    <!-- Stethoscope chest piece -->
+                    <circle cx="30" cy="42" r="8" fill="#2E7D32"/>
+                    <circle cx="30" cy="42" r="5" fill="#4CAF50"/>
+                    <circle cx="30" cy="42" r="2.5" fill="#2E7D32"/>
+                    
+                    <!-- Medical briefcase -->
+                    <rect x="20" y="22" width="20" height="14" rx="2" fill="#4CAF50"/>
+                    <rect x="26" y="18" width="8" height="6" rx="1" fill="none" stroke="#4CAF50" stroke-width="2"/>
+                    <!-- Cross on briefcase -->
+                    <rect x="28" y="25" width="4" height="8" rx="0.5" fill="white"/>
+                    <rect x="26" y="27" width="8" height="4" rx="0.5" fill="white"/>
                 </svg>
             </div>
             <h3>Seguro de<br>Médicos</h3>
@@ -626,16 +669,34 @@
         <!-- Card 3: Asistencia Médica -->
         <div class="card card-3">
             <div class="card-icon">
-                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Medical briefcase -->
-                    <rect x="6" y="14" width="28" height="20" rx="3" fill="#3d9e5a"/>
-                    <rect x="14" y="8" width="12" height="8" rx="2" fill="none" stroke="#3d9e5a" stroke-width="2"/>
-                    <rect x="17" y="19" width="6" height="10" rx="1" fill="white"/>
-                    <rect x="14" y="22" width="12" height="4" rx="1" fill="white"/>
+                <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Teal rounded background -->
+                    <rect x="4" y="4" width="52" height="52" rx="14" fill="#B2DFDB"/>
+                    
+                    <!-- Stethoscope -->
+                    <path d="M20 16 C20 16 12 18 12 28 C12 38 22 40 28 40" stroke="#00796B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <path d="M40 16 C40 16 48 18 48 28 C48 38 38 40 32 40" stroke="#00796B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    
+                    <!-- Earpieces -->
+                    <circle cx="20" cy="14" r="2.5" fill="#00796B"/>
+                    <circle cx="40" cy="14" r="2.5" fill="#00796B"/>
+                    
+                    <!-- Chest piece -->
+                    <circle cx="30" cy="44" r="7" fill="#00796B"/>
+                    <circle cx="30" cy="44" r="4" fill="#26A69A"/>
+                    
+                    <!-- Medical briefcase in center -->
+                    <rect x="18" y="20" width="24" height="18" rx="3" fill="#26A69A"/>
+                    <rect x="24" y="14" width="12" height="8" rx="2" fill="none" stroke="#26A69A" stroke-width="2.5"/>
+                    
+                    <!-- Blue cross on briefcase -->
+                    <rect x="28" y="23" width="4" height="12" rx="1" fill="#0097A7"/>
+                    <rect x="24" y="27" width="12" height="4" rx="1" fill="#0097A7"/>
+                    
                     <!-- Plus badge -->
-                    <circle cx="32" cy="12" r="6" fill="#5cb878"/>
-                    <rect x="30" y="9" width="4" height="6" rx="0.5" fill="white"/>
-                    <rect x="29" y="10.5" width="6" height="3" rx="0.5" fill="white"/>
+                    <circle cx="46" cy="18" r="8" fill="#0097A7"/>
+                    <rect x="44" y="13" width="4" height="10" rx="1" fill="white"/>
+                    <rect x="41" y="16" width="10" height="4" rx="1" fill="white"/>
                 </svg>
             </div>
             <h3>Asistencia<br>Medica</h3>
@@ -646,16 +707,28 @@
         <!-- Card 4: Apoyo en Enfermedad -->
         <div class="card card-4">
             <div class="card-icon">
-                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Globe with cross -->
-                    <circle cx="20" cy="20" r="14" fill="#4db8d8"/>
-                    <ellipse cx="20" cy="20" rx="6" ry="14" fill="none" stroke="#3090b0" stroke-width="1.5"/>
-                    <line x1="6" y1="20" x2="34" y2="20" stroke="#3090b0" stroke-width="1.5"/>
-                    <line x1="20" y1="6" x2="20" y2="34" stroke="#3090b0" stroke-width="1.5"/>
-                    <!-- Medical cross badge -->
-                    <circle cx="30" cy="10" r="6" fill="#E87070"/>
-                    <rect x="28" y="7" width="4" height="6" rx="0.5" fill="white"/>
-                    <rect x="27" y="8.5" width="6" height="3" rx="0.5" fill="white"/>
+                <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Orange rounded background -->
+                    <rect x="4" y="4" width="52" height="52" rx="14" fill="#FFE0B2"/>
+                    
+                    <!-- Clipboard -->
+                    <rect x="14" y="12" width="26" height="38" rx="3" fill="#26A69A"/>
+                    <!-- Clipboard top clip -->
+                    <rect x="20" y="8" width="14" height="8" rx="2" fill="#00796B"/>
+                    <rect x="24" y="10" width="6" height="4" rx="1" fill="#B2DFDB"/>
+                    
+                    <!-- Clipboard paper -->
+                    <rect x="18" y="18" width="18" height="28" rx="1" fill="white"/>
+                    
+                    <!-- Checkmarks/lines on paper -->
+                    <rect x="22" y="22" width="10" height="2" rx="1" fill="#B0BEC5"/>
+                    <rect x="22" y="28" width="8" height="2" rx="1" fill="#B0BEC5"/>
+                    <rect x="22" y="34" width="10" height="2" rx="1" fill="#B0BEC5"/>
+                    
+                    <!-- Shield badge with checkmark -->
+                    <path d="M44 24 L52 28 L52 36 C52 42 44 48 44 48 C44 48 36 42 36 36 L36 28 Z" fill="#F57C00"/>
+                    <!-- Checkmark in shield -->
+                    <path d="M40 36 L43 39 L48 32" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
             <h3>Apoyo en<br>Enfermedad</h3>
@@ -666,13 +739,20 @@
         <!-- Card 5: IMSS y Seguridad Social -->
         <div class="card card-5">
             <div class="card-icon">
-                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Hand holding shield/building -->
-                    <path d="M8 28 C8 28 10 22 18 22 L22 22 C26 22 30 24 30 28 L30 34 L8 34 Z" fill="#2a8fd4"/>
-                    <path d="M20 6 L28 10 L28 18 C28 24 20 28 20 28 C20 28 12 24 12 18 L12 10 Z" fill="#5cb8e8"/>
-                    <rect x="17" y="12" width="6" height="2" fill="white"/>
-                    <rect x="16" y="16" width="8" height="2" fill="white"/>
-                    <rect x="15" y="20" width="10" height="2" fill="white"/>
+                <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Blue rounded background -->
+                    <rect x="4" y="4" width="52" height="52" rx="14" fill="#BBDEFB"/>
+                    
+                    <!-- Person silhouette -->
+                    <circle cx="26" cy="18" r="8" fill="#1976D2"/>
+                    <path d="M12 52 C12 38 18 32 26 32 C34 32 40 38 40 52" fill="#1976D2"/>
+                    
+                    <!-- Shield with checkmark -->
+                    <path d="M42 20 L54 26 L54 38 C54 48 42 54 42 54 C42 54 30 48 30 38 L30 26 Z" fill="#2196F3"/>
+                    <path d="M42 22 L52 27 L52 37 C52 46 42 51 42 51 C42 51 32 46 32 37 L32 27 Z" fill="#1976D2"/>
+                    
+                    <!-- Checkmark in shield -->
+                    <path d="M36 36 L40 40 L48 30" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
             <h3>IMSS y<br>Seguridad Social</h3>
@@ -683,15 +763,26 @@
         <!-- Card 6: Terapia Psicológica Online -->
         <div class="card card-6">
             <div class="card-icon">
-                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Heart with chat bubbles -->
-                    <path d="M20 34 C20 34 6 26 6 16 C6 10 11 6 17 6 C19 6 20 7 20 7 C20 7 21 6 23 6 C29 6 34 10 34 16 C34 26 20 34 20 34Z" fill="#E87070"/>
-                    <!-- Chat bubbles -->
-                    <circle cx="12" cy="16" r="4" fill="white"/>
-                    <circle cx="20" cy="14" r="4" fill="white"/>
-                    <circle cx="28" cy="16" r="4" fill="white"/>
-                    <circle cx="10" cy="20" r="2" fill="white"/>
-                    <circle cx="30" cy="20" r="2" fill="white"/>
+                <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Gray rounded background -->
+                    <rect x="4" y="4" width="52" height="52" rx="14" fill="#ECEFF1"/>
+                    
+                    <!-- Left chat bubble (darker) -->
+                    <rect x="8" y="16" width="22" height="16" rx="8" fill="#78909C"/>
+                    <polygon points="14,32 18,32 12,40" fill="#78909C"/>
+                    
+                    <!-- Right chat bubble (lighter/coral) -->
+                    <rect x="28" y="8" width="24" height="18" rx="9" fill="#EF9A9A"/>
+                    <polygon points="46,26 42,26 48,34" fill="#EF9A9A"/>
+                    
+                    <!-- Heart in right bubble -->
+                    <path d="M40 13 C40 13 36 13 36 17 C36 21 40 24 40 24 C40 24 44 21 44 17 C44 13 40 13 40 13Z" fill="#E57373"/>
+                    <path d="M40 14 C38 14 37 15.5 37 17 C37 19.5 40 22 40 22 C40 22 43 19.5 43 17 C43 15.5 42 14 40 14Z" fill="#EF5350"/>
+                    
+                    <!-- Dots in left bubble -->
+                    <circle cx="14" cy="24" r="2" fill="white"/>
+                    <circle cx="19" cy="24" r="2" fill="white"/>
+                    <circle cx="24" cy="24" r="2" fill="white"/>
                 </svg>
             </div>
             <h3>Terapia<br>Psicologica Online</h3>
