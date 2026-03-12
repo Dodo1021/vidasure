@@ -15,16 +15,18 @@
         body { 
             font-family: 'Poppins', sans-serif; 
             color: #1a365d; 
-            background: #f5f9fc;
+            background: #ffffff;
             min-height: 100vh;
+            width: 100%;
+        }
+        html {
+            width: 100%;
         }
 
         /* ───── MAIN CONTAINER ───── */
         .page-container {
-            max-width: 900px;
-            margin: 0 auto;
+            width: 100%;
             background: #ffffff;
-            box-shadow: 0 0 60px rgba(0,0,0,0.08);
         }
 
         /* ───── NAVBAR ───── */
@@ -32,9 +34,15 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 18px 32px;
+            padding: 18px 40px;
+            background: #fff;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .nav-wrapper {
             background: #fff;
             border-bottom: 1px solid #e8f0f6;
+            width: 100%;
         }
         .logo {
             display: flex;
@@ -95,21 +103,28 @@
         .btn-phone i { font-size: 12px; }
 
         /* ───── HERO ───── */
+        .hero-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
         .hero {
             position: relative;
             display: flex;
             align-items: center;
-            min-height: 380px;
-            padding: 50px 40px;
-            gap: 30px;
-            overflow: hidden;
+            min-height: 420px;
+            padding: 60px 40px;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         .hero-bg {
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 100%;
             z-index: 0;
         }
         .hero-bg svg {
@@ -170,20 +185,25 @@
 
         /* ───── SERVICIOS ───── */
         .servicios {
-            padding: 50px 30px 40px;
+            padding: 60px 30px 50px;
             background: #fff;
+            width: 100%;
+        }
+        .servicios-inner {
+            max-width: 1400px;
+            margin: 0 auto;
         }
         .servicios h2 {
             text-align: center;
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 700;
             color: #1a5a8a;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
         }
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            gap: 12px;
+            gap: 16px;
         }
         .card {
             border-radius: 12px;
@@ -269,9 +289,10 @@
         /* ───── CTA ───── */
         .cta-section {
             position: relative;
-            padding: 70px 40px 80px;
+            padding: 80px 40px 90px;
             text-align: center;
             overflow: hidden;
+            width: 100%;
         }
         .cta-bg {
             position: absolute;
@@ -280,6 +301,7 @@
             right: 0;
             bottom: 0;
             z-index: 0;
+            width: 100%;
         }
         .cta-bg svg {
             width: 100%;
@@ -288,6 +310,8 @@
         .cta-inner {
             position: relative;
             z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         .cta-section h2 {
             font-size: 26px;
@@ -325,6 +349,11 @@
         footer {
             background: linear-gradient(180deg, #e8f2fa 0%, #dceaf5 100%);
             padding: 30px 32px 20px;
+            width: 100%;
+        }
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
         }
         .footer-top {
             display: flex;
@@ -434,12 +463,6 @@
         }
 
         /* ───── RESPONSIVE ───── */
-        @media (max-width: 900px) {
-            .page-container {
-                max-width: 100%;
-                box-shadow: none;
-            }
-        }
         @media (max-width: 768px) {
             nav { 
                 padding: 14px 20px; 
@@ -490,6 +513,7 @@
 <div class="page-container">
 
 <!-- NAVBAR -->
+<div class="nav-wrapper">
 <nav>
     <a href="#" class="logo">
         <div class="logo-icon">
@@ -519,8 +543,10 @@
         <i class="fas fa-phone"></i> +1 866 123 4567
     </a>
 </nav>
+</div>
 
 <!-- HERO -->
+<div class="hero-wrapper">
 <section class="hero">
     <div class="hero-bg">
         <svg viewBox="0 0 900 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -552,9 +578,11 @@
         <img src="img/familia-mexico.jpg" alt="Familia mexicana feliz con bandera de México">
     </div>
 </section>
+</div>
 
 <!-- SERVICIOS -->
 <section class="servicios" id="servicios">
+<div class="servicios-inner">
     <h2>Nuestros Servicios</h2>
     <div class="cards-grid">
 
@@ -672,6 +700,7 @@
         </div>
 
     </div>
+</div>
 </section>
 
 <!-- CTA -->
@@ -701,6 +730,7 @@
 
 <!-- FOOTER -->
 <footer>
+<div class="footer-inner">
     <div class="footer-top">
         <a href="#" class="logo">
             <div class="logo-icon">
@@ -755,6 +785,7 @@
         </ul>
         <a href="https://wa.me/18661234567" class="footer-whatsapp"><i class="fab fa-whatsapp"></i></a>
     </div>
+</div>
 </footer>
 
 </div>
