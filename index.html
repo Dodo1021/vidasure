@@ -202,8 +202,10 @@
         }
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 16px;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .card {
             border-radius: 12px;
@@ -481,8 +483,8 @@
             .hero-content h2 { font-size: 26px; }
             .servicios { padding: 40px 16px; }
             .cards-grid { 
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
             }
             .cta-section { padding: 50px 20px 60px; }
             footer { padding: 24px 16px 16px; }
