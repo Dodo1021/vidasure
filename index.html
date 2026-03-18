@@ -106,52 +106,29 @@
         .hero-wrapper {
             position: relative;
             width: 100%;
-            overflow: hidden;
             background: #deedf8;
         }
         .hero {
-            position: relative;
-            width: 100%;
-            min-height: 380px;
-            overflow: hidden;
             display: flex;
-            align-items: center;
-        }
-        /* Imagen ocupa todo el ancho y alto */
-        .hero-image {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 65%;
-            height: 100%;
-            z-index: 1;
-        }
-        .hero-image img {
+            align-items: stretch;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-            display: block;
+            position: relative;
         }
-        /* Degradado sobre la imagen para que el texto se lea */
-        .hero-image::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(to right, #deedf8 0%, #deedf8 5%, rgba(222,237,248,0.6) 30%, transparent 55%);
+        /* Columna izquierda: texto */
+        .hero-content {
+            flex: 0 0 38%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 40px 80px 60px;
+            background: #deedf8;
+            position: relative;
             z-index: 2;
         }
-        /* Texto encima, lado izquierdo */
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            width: 45%;
-            padding: 60px 0 80px 60px;
-        }
         .hero-content h2 {
-            font-size: 40px;
+            font-size: 38px;
             font-weight: 800;
-            line-height: 1.15;
+            line-height: 1.2;
             color: #1a365d;
             margin-bottom: 14px;
         }
@@ -172,18 +149,41 @@
             text-decoration: none;
             transition: all 0.2s;
             box-shadow: 0 4px 15px rgba(37,99,168,0.3);
+            align-self: flex-start;
         }
         .btn-primary:hover {
             background: #1a4f8c;
             transform: translateY(-1px);
         }
-        /* Curva blanca en la parte baja del hero */
+        /* Columna derecha: imagen completa sin recorte */
+        .hero-image {
+            flex: 0 0 62%;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+        /* Degradado izquierdo sobre la imagen para fusionar con el azul */
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; bottom: 0;
+            width: 120px;
+            background: linear-gradient(to right, #deedf8 0%, transparent 100%);
+            z-index: 1;
+        }
+        /* Curva blanca abajo */
         .hero-curve {
             position: absolute;
             bottom: -2px;
             left: 0;
             right: 0;
-            z-index: 4;
+            z-index: 3;
             line-height: 0;
         }
         .hero-curve svg {
@@ -496,20 +496,27 @@
                 gap: 12px;
             }
             .nav-links { display: none; }
+            .hero {
+                flex-direction: column;
+            }
             .hero-content {
+                flex: none;
                 width: 100%;
-                padding: 30px 20px 260px;
+                padding: 30px 20px 20px;
                 text-align: center;
             }
             .hero-content h2 { font-size: 26px; }
+            .hero-content .btn-primary { align-self: center; }
             .hero-image {
+                flex: none;
                 width: 100%;
-                height: 240px;
-                top: auto;
-                bottom: 0;
+                height: 260px;
             }
             .hero-image::before {
-                background: linear-gradient(to bottom, #deedf8 0%, transparent 40%);
+                width: auto;
+                top: 0; left: 0; right: 0;
+                height: 60px;
+                background: linear-gradient(to bottom, #deedf8 0%, transparent 100%);
             }
             .hero-content h2 { font-size: 26px; }
             .servicios { padding: 40px 16px; }
