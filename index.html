@@ -113,24 +113,22 @@
             position: relative;
             display: flex;
             align-items: center;
-            min-height: 440px;
-            padding: 60px 60px;
-            gap: 0;
-            max-width: 1400px;
-            margin: 0 auto;
+            min-height: 480px;
+            padding: 60px 60px 80px;
+            overflow: hidden;
         }
         .hero-content {
-            flex: 1;
-            max-width: 420px;
+            flex: 0 0 50%;
+            max-width: 500px;
             position: relative;
             z-index: 2;
         }
         .hero-content h2 {
-            font-size: 38px;
+            font-size: 42px;
             font-weight: 800;
             line-height: 1.15;
             color: #1a365d;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
         .hero-content p {
             font-size: 15px;
@@ -155,20 +153,32 @@
             transform: translateY(-1px);
         }
         .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
-            position: relative;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 55%;
             z-index: 1;
-            height: 440px;
         }
         .hero-image img {
+            width: 100%;
             height: 100%;
-            max-height: 440px;
-            width: auto;
             object-fit: cover;
             object-position: center top;
+            display: block;
+        }
+        /* Curva blanca en la parte baja del hero */
+        .hero-curve {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            z-index: 3;
+            line-height: 0;
+        }
+        .hero-curve svg {
+            display: block;
+            width: 100%;
         }
 
         /* ───── SERVICIOS ───── */
@@ -478,11 +488,19 @@
             .nav-links { display: none; }
             .hero { 
                 flex-direction: column; 
-                padding: 30px 20px;
+                padding: 30px 20px 300px;
                 text-align: center;
+                min-height: auto;
             }
             .hero-content {
                 max-width: 100%;
+                flex: none;
+            }
+            .hero-image {
+                width: 100%;
+                height: 280px;
+                top: auto;
+                bottom: 0;
             }
             .hero-content h2 { font-size: 26px; }
             .servicios { padding: 40px 16px; }
@@ -522,7 +540,25 @@
 <div class="nav-wrapper">
 <nav>
     <a href="#" class="logo">
-        <img src="img/logo.jpg" alt="VidaSure" style="height:44px; object-fit:contain;">
+        <div class="logo-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 3C12 3 6 9 6 17C6 27 20 37 20 37C20 37 34 27 34 17C34 9 28 3 20 3Z" fill="url(#shield-grad)" stroke="#1a7ab8" stroke-width="0.5"/>
+                <path d="M20 11C16 11 13 14 13 18C13 22 16 25 20 28C24 25 27 22 27 18C27 14 24 11 20 11Z" fill="white" opacity="0.3"/>
+                <path d="M20 13C20 13 16 16 16 19C16 22 18 24 20 26C22 24 24 22 24 19C24 16 20 13 20 13Z" fill="white" opacity="0.5"/>
+                <!-- Heart -->
+                <path d="M20 19C18 17 15 19 20 24C25 19 22 17 20 19Z" fill="white"/>
+                <defs>
+                    <linearGradient id="shield-grad" x1="6" y1="3" x2="34" y2="37" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#4a9fd4"/>
+                        <stop offset="100%" stop-color="#1a5fa8"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="logo-text">
+            <h1>VidaSure</h1>
+            <span>Cuida Hoy, Disfruta Mañana</span>
+        </div>
     </a>
     <ul class="nav-links">
         <li><a href="#">Inicio</a></li>
@@ -545,7 +581,13 @@
         <a href="https://wa.me/18661234567" class="btn-primary">Habla con un Asesor</a>
     </div>
     <div class="hero-image">
-        <img src="img/familia-hero.jpg" alt="Familia mexicana con bandera">
+        <img src="img/familia-hero-final.jpg" alt="Familia mexicana con bandera">
+    </div>
+    <!-- Curva blanca redondeada abajo -->
+    <div class="hero-curve">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,80 L0,40 Q360,0 720,30 T1440,20 L1440,80 Z" fill="#ffffff"/>
+        </svg>
     </div>
 </section>
 </div>
@@ -559,62 +601,7 @@
         <!-- Card 1: Planes de Ahorro -->
         <div class="card card-1">
             <div class="card-icon">
-                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Golden halo/glow behind piggy -->
-                    <ellipse cx="40" cy="50" rx="32" ry="24" fill="#FFEAA7" opacity="0.5"/>
-                    
-                    <!-- Piggy bank main body - 3D salmon pink -->
-                    <ellipse cx="38" cy="50" rx="24" ry="18" fill="#F8B4B4"/>
-                    <ellipse cx="36" cy="52" rx="20" ry="14" fill="#F5A0A0"/>
-                    <!-- Highlight for 3D effect -->
-                    <ellipse cx="30" cy="44" rx="8" ry="6" fill="#FACACA" opacity="0.6"/>
-                    
-                    <!-- Piggy snout -->
-                    <ellipse cx="58" cy="52" rx="6" ry="4.5" fill="#F5A0A0"/>
-                    <ellipse cx="58" cy="52" rx="5" ry="3.5" fill="#E89090"/>
-                    <circle cx="56" cy="51.5" r="1.2" fill="#C67070"/>
-                    <circle cx="60" cy="51.5" r="1.2" fill="#C67070"/>
-                    
-                    <!-- Piggy ear (left side) -->
-                    <ellipse cx="22" cy="38" rx="5" ry="7" fill="#F8B4B4"/>
-                    <ellipse cx="23" cy="38" rx="3" ry="5" fill="#E89090"/>
-                    
-                    <!-- Piggy eye -->
-                    <circle cx="48" cy="44" r="2.5" fill="#2D3436"/>
-                    <circle cx="49" cy="43" r="1" fill="white"/>
-                    
-                    <!-- Piggy legs (4 small rounded legs) -->
-                    <ellipse cx="26" cy="66" rx="4" ry="5" fill="#E89090"/>
-                    <ellipse cx="36" cy="67" rx="4" ry="5" fill="#E89090"/>
-                    <ellipse cx="46" cy="67" rx="4" ry="5" fill="#E89090"/>
-                    <ellipse cx="54" cy="66" rx="4" ry="5" fill="#E89090"/>
-                    
-                    <!-- Coin slot on top -->
-                    <rect x="32" y="32" width="12" height="3" rx="1.5" fill="#C67070"/>
-                    
-                    <!-- Mexican flag pole -->
-                    <rect x="16" y="10" width="2.5" height="32" fill="#8B7355"/>
-                    <circle cx="17.25" cy="9" r="2.5" fill="#D4A84B"/>
-                    
-                    <!-- Mexican flag -->
-                    <rect x="18.5" y="10" width="20" height="14" fill="white"/>
-                    <rect x="18.5" y="10" width="6.67" height="14" fill="#006847"/>
-                    <rect x="31.83" y="10" width="6.67" height="14" fill="#CE1126"/>
-                    <!-- Eagle emblem on white stripe -->
-                    <circle cx="28.5" cy="17" r="3" fill="#8B5A2B"/>
-                    <path d="M26 17 L28.5 14 L31 17 L28.5 20 Z" fill="#5D4037"/>
-                    <ellipse cx="28.5" cy="17" rx="1.5" ry="2" fill="#8B5A2B"/>
-                    
-                    <!-- Golden coin (3D effect) -->
-                    <circle cx="64" cy="26" r="11" fill="#D4A017"/>
-                    <circle cx="64" cy="26" r="9.5" fill="#FFD700"/>
-                    <circle cx="64" cy="26" r="8" fill="#FFC200"/>
-                    <circle cx="64" cy="26" r="6.5" fill="#FFD700"/>
-                    <!-- M symbol for Mexican peso -->
-                    <text x="64" y="30" font-size="10" fill="#B8860B" text-anchor="middle" font-weight="bold" font-family="Arial">M</text>
-                    <!-- Coin shine -->
-                    <ellipse cx="60" cy="22" rx="3" ry="2" fill="#FFF5CC" opacity="0.6"/>
-                </svg>
+                <img src="img/icons/icon-ahorro.png" alt="Planes de Ahorro" style="width:60px;height:60px;object-fit:contain;">
             </div>
             <h3>Planes<br>de Ahorro</h3>
             <p>Construye tu retiro en México mientras trabajas en Estados Unidos.</p>
@@ -825,7 +812,23 @@
 <div class="footer-inner">
     <div class="footer-top">
         <a href="#" class="logo">
-            <img src="img/logo.jpg" alt="VidaSure" style="height:44px; object-fit:contain;">
+            <div class="logo-icon">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 3C12 3 6 9 6 17C6 27 20 37 20 37C20 37 34 27 34 17C34 9 28 3 20 3Z" fill="url(#shield-grad-footer)" stroke="#1a7ab8" stroke-width="0.5"/>
+                    <path d="M20 13C20 13 16 16 16 19C16 22 18 24 20 26C22 24 24 22 24 19C24 16 20 13 20 13Z" fill="white" opacity="0.5"/>
+                    <path d="M20 19C18 17 15 19 20 24C25 19 22 17 20 19Z" fill="white"/>
+                    <defs>
+                        <linearGradient id="shield-grad-footer" x1="6" y1="3" x2="34" y2="37" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#4a9fd4"/>
+                            <stop offset="100%" stop-color="#1a5fa8"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <h1>VidaSure</h1>
+                <span>Cuida Hoy, Disfruta Mañana</span>
+            </div>
         </a>
 
         <div class="footer-phone">
