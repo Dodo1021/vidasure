@@ -106,24 +106,45 @@
         .hero-wrapper {
             position: relative;
             width: 100%;
-            background: #deedf8;
         }
         .hero {
-            display: flex;
-            align-items: stretch;
-            width: 100%;
             position: relative;
-        }
-        /* Columna izquierda: texto */
-        .hero-content {
-            flex: 0 0 38%;
+            width: 100%;
+            min-height: 380px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 60px 40px 80px 60px;
-            background: #deedf8;
+            align-items: center;
+            overflow: hidden;
+        }
+        /* Imagen ocupa TODO el fondo 100% ancho */
+        .hero-image {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 0;
+        }
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: right center;
+            display: block;
+        }
+        /* Degradado encima de la imagen para que el texto se lea */
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to right,
+                rgba(220,236,248,0.97) 0%,
+                rgba(220,236,248,0.90) 28%,
+                rgba(220,236,248,0.50) 48%,
+                transparent 65%);
+        }
+        /* Texto encima del todo */
+        .hero-content {
             position: relative;
             z-index: 2;
+            max-width: 480px;
+            padding: 60px 40px 90px 60px;
         }
         .hero-content h2 {
             font-size: 38px;
@@ -149,33 +170,10 @@
             text-decoration: none;
             transition: all 0.2s;
             box-shadow: 0 4px 15px rgba(37,99,168,0.3);
-            align-self: flex-start;
         }
         .btn-primary:hover {
             background: #1a4f8c;
             transform: translateY(-1px);
-        }
-        /* Columna derecha: imagen completa sin recorte */
-        .hero-image {
-            flex: 0 0 62%;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center center;
-            display: block;
-        }
-        /* Degradado izquierdo sobre la imagen para fusionar con el azul */
-        .hero-image::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; bottom: 0;
-            width: 120px;
-            background: linear-gradient(to right, #deedf8 0%, transparent 100%);
-            z-index: 1;
         }
         /* Curva blanca abajo */
         .hero-curve {
@@ -496,27 +494,18 @@
                 gap: 12px;
             }
             .nav-links { display: none; }
-            .hero {
-                flex-direction: column;
-            }
+            .hero { min-height: 320px; }
             .hero-content {
-                flex: none;
-                width: 100%;
-                padding: 30px 20px 20px;
+                max-width: 100%;
+                padding: 30px 20px 80px;
                 text-align: center;
             }
             .hero-content h2 { font-size: 26px; }
-            .hero-content .btn-primary { align-self: center; }
-            .hero-image {
-                flex: none;
-                width: 100%;
-                height: 260px;
-            }
-            .hero-image::before {
-                width: auto;
-                top: 0; left: 0; right: 0;
-                height: 60px;
-                background: linear-gradient(to bottom, #deedf8 0%, transparent 100%);
+            .hero-image::after {
+                background: linear-gradient(to bottom,
+                    rgba(220,236,248,0.85) 0%,
+                    rgba(220,236,248,0.5) 40%,
+                    transparent 70%);
             }
             .hero-content h2 { font-size: 26px; }
             .servicios { padding: 40px 16px; }
