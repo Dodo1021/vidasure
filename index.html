@@ -209,90 +209,92 @@
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(6, minmax(0, 1fr));
-            gap: 20px;
+            gap: 16px;
             max-width: 1200px;
             margin: 0 auto;
         }
         .card {
-            border-radius: 12px;
-            padding: 20px 10px 16px;
+            border-radius: 18px;
+            padding: 28px 14px 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            min-height: 320px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
         }
         .card-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 14px;
+            width: 80px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 8px;
-            position: relative;
+            margin-bottom: 4px;
+            background: transparent !important;
         }
         .card-icon img, .card-icon svg {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
         }
         .card h3 {
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 700;
             line-height: 1.3;
             color: #1a365d;
-            min-height: 32px;
+            min-height: 38px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .card p {
-            font-size: 10px;
-            color: #6a8aa4;
-            line-height: 1.45;
+            font-size: 11px;
+            color: #5a7a94;
+            line-height: 1.5;
             flex-grow: 1;
         }
         .btn-card {
             margin-top: auto;
-            padding: 6px 14px;
-            border-radius: 15px;
-            font-size: 10px;
-            font-weight: 600;
+            padding: 9px 18px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
             text-decoration: none;
             color: white;
-            transition: opacity 0.2s;
+            transition: opacity 0.2s, transform 0.2s;
+            white-space: nowrap;
         }
-        .btn-card:hover { opacity: 0.85; }
+        .btn-card:hover { opacity: 0.85; transform: scale(1.03); }
 
-        /* Card 1 - Planes de Ahorro (Yellow/Cream) */
-        .card-1 { background: linear-gradient(180deg, #FEF3D7 0%, #FDE9B9 100%); }
-        .card-1 .card-icon { background: transparent; }
-        .card-1 .btn-card { background: #E8983A; }
+        /* Card 1 - Planes de Ahorro */
+        .card-1 { background: linear-gradient(160deg, #FFF3C4 0%, #FFE082 100%); }
+        .card-1 .btn-card { background: #F59E0B; }
 
-        /* Card 2 - Seguro de Médicos (White) */
-        .card-2 { background: #FFFFFF; border: 1px solid #E8EEF2; }
-        .card-2 .card-icon { background: transparent; }
-        .card-2 .btn-card { background: #4CAF50; }
+        /* Card 2 - Seguro de Médicos */
+        .card-2 { background: #FFFFFF; border: 1.5px solid #D1E8F0; }
+        .card-2 .btn-card { background: #22C55E; }
 
-        /* Card 3 - Asistencia Médica (Teal/Cyan light) */
-        .card-3 { background: linear-gradient(180deg, #E0F4F4 0%, #C8ECEC 100%); }
-        .card-3 .card-icon { background: transparent; }
-        .card-3 .btn-card { background: #26A69A; }
+        /* Card 3 - Asistencia Médica */
+        .card-3 { background: linear-gradient(160deg, #CCFBF1 0%, #99F6E4 100%); }
+        .card-3 .btn-card { background: #0D9488; }
 
-        /* Card 4 - Apoyo en Enfermedad (White) */
-        .card-4 { background: #FFFFFF; border: 1px solid #E8EEF2; }
-        .card-4 .card-icon { background: transparent; }
-        .card-4 .btn-card { background: #E8983A; }
+        /* Card 4 - Apoyo en Enfermedad */
+        .card-4 { background: #FFFFFF; border: 1.5px solid #D1E8F0; }
+        .card-4 .btn-card { background: #F59E0B; }
 
-        /* Card 5 - IMSS (Blue light) */
-        .card-5 { background: linear-gradient(180deg, #E3F2FD 0%, #BBDEFB 100%); }
-        .card-5 .card-icon { background: transparent; }
-        .card-5 .btn-card { background: #2196F3; }
+        /* Card 5 - IMSS */
+        .card-5 { background: linear-gradient(160deg, #DBEAFE 0%, #BFDBFE 100%); }
+        .card-5 .btn-card { background: #3B82F6; }
 
-        /* Card 6 - Terapia Psicológica (White/Light pink) */
-        .card-6 { background: linear-gradient(180deg, #FFF5F5 0%, #FFE8E8 100%); }
-        .card-6 .card-icon { background: transparent; }
-        .card-6 .btn-card { background: #9E9E9E; opacity: 0.85; }
+        /* Card 6 - Terapia */
+        .card-6 { background: linear-gradient(160deg, #FCE7F3 0%, #FBCFE8 100%); }
+        .card-6 .btn-card { background: #EC4899; }
 
         /* ───── CTA ───── */
         .cta-section {
@@ -606,7 +608,7 @@
         <!-- Card 1: Planes de Ahorro -->
         <div class="card card-1">
             <div class="card-icon">
-                <img src="img/icons/icon-ahorro-final.png" alt="Planes de Ahorro" style="width:60px;height:60px;object-fit:contain;">
+                <img src="img/icons/icon-ahorro-final.png" alt="Planes de Ahorro" style="width:80px;height:80px;object-fit:contain;">
             </div>
             <h3>Planes<br>de Ahorro</h3>
             <p>Construye tu retiro en México mientras trabajas en Estados Unidos.</p>
@@ -616,7 +618,7 @@
         <!-- Card 2: Seguro de Médicos -->
         <div class="card card-2">
             <div class="card-icon">
-                <img src="img/icons/icon-medicos-final.png" alt="Seguro de Médicos" style="width:60px;height:60px;object-fit:contain;">
+                <img src="img/icons/icon-medicos-final.png" alt="Seguro de Médicos" style="width:80px;height:80px;object-fit:contain;">
             </div>
             <h3>Seguro de<br>Médicos</h3>
             <p>Acceso a hospitales privados en México con costos accesibles.</p>
@@ -626,7 +628,7 @@
         <!-- Card 3: Asistencia Médica -->
         <div class="card card-3">
             <div class="card-icon">
-                <img src="img/icons/icon-asistencia-final.png" alt="Asistencia Médica" style="width:60px;height:60px;object-fit:contain;">
+                <img src="img/icons/icon-asistencia-final.png" alt="Asistencia Médica" style="width:80px;height:80px;object-fit:contain;">
             </div>
             <h3>Asistencia<br>Medica</h3>
             <p>Orientación médica y conexión con médicos especialistas.</p>
@@ -636,7 +638,7 @@
         <!-- Card 4: Apoyo en Enfermedad -->
         <div class="card card-4">
             <div class="card-icon">
-                <img src="img/icons/icon-enfermedad-final.png" alt="Apoyo en Enfermedad" style="width:60px;height:60px;object-fit:contain;">
+                <img src="img/icons/icon-enfermedad-final.png" alt="Apoyo en Enfermedad" style="width:80px;height:80px;object-fit:contain;">
             </div>
             <h3>Apoyo en<br>Enfermedad</h3>
             <p>Acompañamiento médico cuando más lo necesitas.</p>
@@ -645,8 +647,8 @@
 
         <!-- Card 5: IMSS y Seguridad Social -->
         <div class="card card-5">
-            <div class="card-icon" style="background:white; border-radius:14px; padding:4px;">
-                <img src="img/icons/imss-logo-new.png" alt="IMSS" style="width:60px;height:60px;object-fit:contain;">
+            <div class="card-icon">
+                <img src="img/icons/imss-logo-new.png" alt="IMSS" style="width:80px;height:80px;object-fit:contain;">
             </div>
             <h3>IMSS y<br>Seguridad Social</h3>
             <p>Te orientamos para aprovechar servicios de salud en México.</p>
@@ -656,7 +658,7 @@
         <!-- Card 6: Terapia Psicológica Online -->
         <div class="card card-6">
             <div class="card-icon">
-                <img src="img/icons/icon-terapia-final.png" alt="Terapia Psicológica" style="width:60px;height:60px;object-fit:contain;">
+                <img src="img/icons/icon-terapia-final.png" alt="Terapia Psicológica" style="width:80px;height:80px;object-fit:contain;">
             </div>
             <h3>Terapia<br>Psicologica Online</h3>
             <p>Psicólogos en México que atienden desde cualquier lugar.</p>
